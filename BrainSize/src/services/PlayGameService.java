@@ -1,7 +1,8 @@
 package services;
 
+import javax.swing.JLabel;
+
 public class PlayGameService {
-    public static void main(String[] args) {
-        System.out.println("Tao la duong");
-    }
-}
+
+
+   }
