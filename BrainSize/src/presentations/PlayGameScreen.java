@@ -35,6 +35,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
         btnA = new javax.swing.JButton();
         btn5050 = new javax.swing.JButton();
         btnDoiCH = new javax.swing.JButton();
+        lblSTT = new javax.swing.JLabel();
 
         jButton3.setText("jButton3");
 
@@ -70,43 +71,55 @@ public class PlayGameScreen extends javax.swing.JFrame {
 
         btnDoiCH.setText("jButton9");
 
+        lblSTT.setText("Câu :");
+
         javax.swing.GroupLayout pnBackgroundLayout = new javax.swing.GroupLayout(pnBackground);
         pnBackground.setLayout(pnBackgroundLayout);
         pnBackgroundLayout.setHorizontalGroup(
             pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnBackgroundLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(lblCauhoi, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnBackgroundLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnBackgroundLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(lblScore)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(102, 102, 102)
                         .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnDoiCH)
-                            .addComponent(btn5050)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnBackgroundLayout.createSequentialGroup()
+                                .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnA, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnC, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnD, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnB, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(pnBackgroundLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnBackgroundLayout.createSequentialGroup()
+                                        .addGap(16, 16, 16)
+                                        .addComponent(lblCountTime)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(175, 175, 175))
+                                    .addGroup(pnBackgroundLayout.createSequentialGroup()
+                                        .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblSTT)
+                                            .addComponent(lblCauhoi, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 19, Short.MAX_VALUE)))))
+                        .addGap(25, 25, 25))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnBackgroundLayout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnA, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnC, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnD, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnB, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(25, 25, 25))
-            .addGroup(pnBackgroundLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblCountTime)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnBattieng)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnTattieng)
-                .addGap(24, 24, 24))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnBackgroundLayout.createSequentialGroup()
+                                .addComponent(btnDoiCH)
+                                .addGap(18, 18, 18)
+                                .addComponent(btn5050)
+                                .addGap(86, 86, 86))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnBackgroundLayout.createSequentialGroup()
+                                .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblScore)
+                                    .addComponent(btnBattieng))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnTattieng)
+                                .addGap(24, 24, 24))))))
         );
         pnBackgroundLayout.setVerticalGroup(
             pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,20 +130,25 @@ public class PlayGameScreen extends javax.swing.JFrame {
                         .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnBattieng)
                             .addComponent(btnTattieng))
-                        .addGap(113, 113, 113)
-                        .addComponent(btnDoiCH)
-                        .addGap(28, 28, 28)
-                        .addComponent(btn5050))
-                    .addGroup(pnBackgroundLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(lblCountTime)
-                        .addGap(27, 27, 27)
                         .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblScore)
-                            .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                            .addGroup(pnBackgroundLayout.createSequentialGroup()
+                                .addGap(101, 101, 101)
+                                .addComponent(lblScore))
+                            .addGroup(pnBackgroundLayout.createSequentialGroup()
+                                .addGap(86, 86, 86)
+                                .addComponent(lblCountTime))))
+                    .addGroup(pnBackgroundLayout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn5050)
+                    .addComponent(btnDoiCH))
+                .addGap(21, 21, 21)
+                .addComponent(lblSTT)
+                .addGap(18, 18, 18)
                 .addComponent(lblCauhoi, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
+                .addGap(28, 28, 28)
                 .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnB, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnA, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -211,6 +229,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
     private javax.swing.JLabel lblCauhoi;
     private javax.swing.JLabel lblCountTime;
     private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblSTT;
     private javax.swing.JLabel lblScore;
     private javax.swing.JPanel pnBackground;
     // End of variables declaration//GEN-END:variables

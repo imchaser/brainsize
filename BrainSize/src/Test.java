@@ -7,7 +7,6 @@ import java.util.ArrayList;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Duong
@@ -18,11 +17,10 @@ public class Test {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        CAUHOIdao ch = new CAUHOIdao();
-        ArrayList<CAUHOIdao> c = ch.getListCH(1);
-        for(CAUHOIdao x: c){
-            System.out.println(x.getCauHoi());
+
+        for (int i = 1; i <= 4; i++) {
+            int a = Integer.parseInt(Math.round(Math.random() * 4)+"");
+            System.out.println(a);
         }
     }
-    
 }
