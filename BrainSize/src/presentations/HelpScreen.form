@@ -3,6 +3,15 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[600, 600]"/>
+    </Property>
+    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[600, 600]"/>
+    </Property>
+    <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[600, 600]"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -23,13 +32,71 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnBackHelp" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="409" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="89" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="150" max="32767" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="294" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <Component id="btnBackHelp" min="-2" pref="28" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="jTextArea1">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+            <Property name="text" type="java.lang.String" value="+ Sau khi giao di&#x1ec7;n tr&#xf2; ch&#x1a1;i &#x111;&#x1b0;&#x1ee3;c m&#x1edf; b&#x1ea1;n s&#x1ebd; th&#x1ea5;y&#xa; xu&#x1ea5;t hi&#xea;jn giao di&#x1ec7;n c&#x1ee7;a tr&#xf2; ch&#x1a1;i&#xa;+ B&#x1ea1;n c&#xf3; th&#x1ec3; click &#x111;&#x1ec3; ch&#x1a1;i ngay ho&#x1eb7;c xem b&#x1ea3;ng x&#x1ebf;p&#xa; h&#x1ea1;ng n&#x1ebf; &#x111;&#xe3; t&#x1eeb;ng ch&#x1a1;i ho&#x1eb7;c &#x1ea5;n tho&#xe1;t ngay&#xa;+ Tr&#xf2; ch&#x1a1;i bao g&#x1ed3;m 15 c&#xe2;u h&#x1ecf;i chia l&#xe0;m ba m&#x1ed1;c 5,&#xa; 10 v&#xe0; 15 k&#x1ebf;t th&#xfa;c 15 c&#xe2;u h&#x1ecf;i b&#x1ea1;n s&#x1ebd; &#x111;&#x1ea1;t t&#x1ed1;i &#x111;a 15&#xa; &#x111;i&#x1ec3;m v&#xe0; &#x111;&#x1b0;&#x1ee3;c l&#x1b0;u t&#xea;n l&#x1ea1;i &#xa;+ Trong qu&#xe1; tr&#xec;nh ch&#x1a1;i game b&#x1ea1;n c&#xf3; 2 s&#x1ef1; ch&#x1a1;i gi&#xfa;p &#xa; &#x111;&#xf3; l&#xe0; 50/50 b&#x1ea1;n &#x111;&#x1b0;&#x1ee3;c ph&#xe9;p lo&#x1ea1;i b&#x1ecf; &#x111;i 2 ph&#x1b0;&#x1a1;ng &#xe1;n &#xa; sai , v&#xe0; c&#xf3; quy&#x1ec1;n next c&#xe2;u h&#x1ecf;i tuy nhi&#xea;n vi&#x1ec7;c next&#xa; c&#xe2;u h&#x1ecf;i &#x111;&#x1ed3;ng ngh&#x129;a b&#x1ea1;n s&#x1ebd; b&#x1ecb; tr&#x1eeb; &#x111;i 1 &#x111;i&#x1ec3;m .&#xa;+ k&#x1ebf;t th&#xfa;c tr&#xf2; ch&#x1a1;i ban s&#x1ebd; &#x111;&#x1b0;&#x1ee3;c l&#x1b0;u &#x111;i&#x1ec3;m v&#xe0; c&#xf3; th&#x1ec3;&#xa; &#x1ea5;n ti&#x1ebf;p t&#x1ee5;c &#x111;&#x1ec3; ch&#x1a1;i ti&#x1ebf;p &#xa;+ ch&#xfa;c c&#xe1;c b&#x1ea1;n ch&#x1a1;i game vui v&#x1ebb; !."/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="24" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="C&#xc1;CH CH&#x1a0;I :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnBackHelp">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="66" red="0" type="rgb"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="C:\Users\huy\Documents\GitHub\brainsize\BrainSize\src\images\images.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackHelpActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
 </Form>
