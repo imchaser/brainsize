@@ -16,13 +16,19 @@ public class StartGame extends javax.swing.JFrame {
     /**
      * Creates new form StartGame
      */
+   private PlayGameScreen pl ;
+
+    public PlayGameScreen getPl() {
+        return pl;
+    }
+
     public StartGame() {
         initComponents();
+        setSize(600, 600);
+        setLocationRelativeTo(null);
         setTitle("Brainsize");
-        setVisible(true);
-        
+
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -109,9 +115,11 @@ public class StartGame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPlayGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayGameActionPerformed
-        // TODO add your handling code here:
-        
-        
+        pl = new PlayGameScreen();
+        pl.setVisible(true);
+        this.setVisible(false);
+
+
     }//GEN-LAST:event_btnPlayGameActionPerformed
 
     private void btnRankActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRankActionPerformed
@@ -119,9 +127,8 @@ public class StartGame extends javax.swing.JFrame {
         RankScreen rs = new RankScreen();
         rs.setVisible(true);
         this.setVisible(false);
-        
-        
-        
+
+
     }//GEN-LAST:event_btnRankActionPerformed
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
@@ -161,7 +168,7 @@ public class StartGame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StartGame();
+                new StartGame().setVisible(true);
             }
         });
     }

@@ -118,11 +118,6 @@
         <Component class="javax.swing.JTextField" name="txtTop5">
         </Component>
         <Component class="javax.swing.JButton" name="btnBackRank">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\huy\Documents\GitHub\brainsize\BrainSize\src\images\images.png"/>
-            </Property>
-          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackRankActionPerformed"/>
           </Events>

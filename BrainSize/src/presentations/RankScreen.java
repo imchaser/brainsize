@@ -4,6 +4,8 @@ public class RankScreen extends javax.swing.JFrame {
 
     public RankScreen() {
         initComponents();
+        setSize(600, 600);
+        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -28,7 +30,6 @@ public class RankScreen extends javax.swing.JFrame {
         lblRank.setForeground(new java.awt.Color(153, 0, 0));
         lblRank.setText("BẢNG ĐIỂM");
 
-        btnBackRank.setIcon(new javax.swing.ImageIcon("C:\\Users\\huy\\Documents\\GitHub\\brainsize\\BrainSize\\src\\images\\images.png")); // NOI18N
         btnBackRank.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackRankActionPerformed(evt);

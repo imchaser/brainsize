@@ -13,6 +13,7 @@ import org.hibernate.Transaction;
 @Entity
 @Table(name = "CAUHOI")
 public class CAUHOIdao {
+
     @Id
     @Column(name = "IDCH")
     private int IDCH;
@@ -26,20 +27,31 @@ public class CAUHOIdao {
     private String DapAn3;
     @Column(name = "DapAn4")
     private String DapAn4;
+    @Column(name = "KetQua")
+    private String KetQua;
     @Column(name = "MucDo")
     private int MucDo;
 
     public CAUHOIdao() {
     }
 
-    public CAUHOIdao(int IDCH, String CauHoi, String DapAn1, String DapAn2, String DapAn3, String DapAn4, int MucDo) {
+    public CAUHOIdao(int IDCH, String CauHoi, String DapAn1, String DapAn2, String DapAn3, String DapAn4, String KetQua, int MucDo) {
         this.IDCH = IDCH;
         this.CauHoi = CauHoi;
         this.DapAn1 = DapAn1;
         this.DapAn2 = DapAn2;
         this.DapAn3 = DapAn3;
         this.DapAn4 = DapAn4;
+        this.KetQua = KetQua;
         this.MucDo = MucDo;
+    }
+
+    public String getKetQua() {
+        return KetQua;
+    }
+
+    public void setKetQua(String KetQua) {
+        this.KetQua = KetQua;
     }
 
     public int getIDCH() {
@@ -97,6 +109,7 @@ public class CAUHOIdao {
     public void setMucDo(int MucDo) {
         this.MucDo = MucDo;
     }
+    //cac phương thức của câu hỏi
 
     public ArrayList<CAUHOIdao> getListCH(int mucdo) {
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -108,11 +121,26 @@ public class CAUHOIdao {
             tr.commit();
         } catch (Exception e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             session.close();
         }
         return lst;
     }
-    //cac phương thức của câu hỏi
+
+    public CAUHOIdao getCH(int id) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction tr = null;
+        CAUHOIdao ch = null;
+        try {
+            tr = session.beginTransaction();
+            ch = (CAUHOIdao) session.createQuery("from CAUHOIdao where IDCH =" + id).uniqueResult();
+            tr.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return ch;
+    }
 
 }
