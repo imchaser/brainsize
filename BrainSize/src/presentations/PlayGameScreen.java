@@ -7,7 +7,7 @@ import javax.swing.JButton;
 import services.PlayGameService;
 
 public class PlayGameScreen extends javax.swing.JFrame {
-    
+
     private PlayGameService gameservice = new PlayGameService();
     private int stt = 1;
     private Vector v = new Vector();
@@ -15,7 +15,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
     CAUHOIdao ch = new CAUHOIdao();
     private PlayGameService.Timing t = null;
     private RankScreen rank = new RankScreen();
-    
+
     public PlayGameScreen() {
         initComponents();
         t = gameservice.new Timing(lblCountTime, this, rank);
@@ -25,7 +25,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         t.start();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -329,24 +329,24 @@ public class PlayGameScreen extends javax.swing.JFrame {
     private javax.swing.JTextArea taCauHoi;
     // End of variables declaration//GEN-END:variables
     private void setText(int id) {
-          int da =0;
+        int da = 0;
         Vector listDA = new Vector();
         Random rd = new Random();
-        for(int i=1; i<=4;){
-             da=rd.ints(1, 5).limit(1).findFirst().getAsInt();
-            if(!listDA.contains(da)){               
+        for (int i = 1; i <= 4;) {
+            da = rd.ints(1, 5).limit(1).findFirst().getAsInt();
+            if (!listDA.contains(da)) {
                 listDA.add(da);
                 i++;
             }
         }
         lblSTT.setText("Câu hỏi " + stt + " :");
         taCauHoi.setText(ch.getCH(id).getCauHoi());
-        btnA.setText(ch.getCH(id).getDapAn1());
-        btnB.setText(ch.getCH(id).getDapAn2());
-        btnC.setText(ch.getCH(id).getDapAn3());
-        btnD.setText(ch.getCH(id).getDapAn4());
+        btnA.setText(gameservice.getDA(id, (int) listDA.get(0)));
+        btnB.setText(gameservice.getDA(id, (int) listDA.get(1)));
+        btnC.setText(gameservice.getDA(id, (int) listDA.get(2)));
+        btnD.setText(gameservice.getDA(id, (int) listDA.get(3)));
     }
-    
+
     public void checkAns(JButton btn) {
         boolean kq = gameservice.ktKQ(id, btn.getText());
         if (kq == true) {

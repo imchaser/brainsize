@@ -12,6 +12,7 @@ public class PlayGameService {
 
     private CAUHOIdao ch = new CAUHOIdao();
     private ArrayList<CAUHOIdao> listCH = null;
+
     public int getIDCH(int stt, Vector listID) {
         int a = 0;
         int min = 1;
@@ -25,14 +26,33 @@ public class PlayGameService {
         }
         min = listCH.get(0).getIDCH();
         if (!listID.contains(a)) {
-            a = rd.ints(min, listCH.size() + 1).limit(1).findFirst().getAsInt();
-            listID.add(a);
-        } else {
-            while (listID.contains(a)) {
+            do {
                 a = rd.ints(min, listCH.size() + 1).limit(1).findFirst().getAsInt();
-            }
+            } while (listID.contains(a));
+            listID.add(a);
         }
         return a;
+    }
+
+    public String getDA(int id, int i) {
+        String da = "";
+        switch (i) {
+            case 1:
+                da = ch.getCH(id).getDapAn1();
+                break;
+            case 2:
+                da = ch.getCH(id).getDapAn2();
+                break;
+            case 3:
+                da = ch.getCH(id).getDapAn3();
+                break;
+            case 4:
+                da = ch.getCH(id).getDapAn4();
+                break;
+            default:
+                break;
+        }
+        return da;
     }
 
     public boolean ktKQ(int id, String kq) {
@@ -61,7 +81,7 @@ public class PlayGameService {
             this.j = j;
         }
 
-        public Timing(JLabel lbltime,JFrame play,JFrame over) {
+        public Timing(JLabel lbltime, JFrame play, JFrame over) {
             this.lbltime = lbltime;
             this.play = play;
             this.over = over;
