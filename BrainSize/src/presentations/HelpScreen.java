@@ -4,6 +4,9 @@ public class HelpScreen extends javax.swing.JFrame {
 
     public HelpScreen() {
         initComponents();
+        
+        setSize(600, 600);
+        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -30,7 +33,6 @@ public class HelpScreen extends javax.swing.JFrame {
         jLabel1.setText("CÁCH CHƠI :");
 
         btnBackHelp.setBackground(new java.awt.Color(0, 102, 102));
-        btnBackHelp.setIcon(new javax.swing.ImageIcon("C:\\Users\\huy\\Documents\\GitHub\\brainsize\\BrainSize\\src\\images\\images.png")); // NOI18N
         btnBackHelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackHelpActionPerformed(evt);
