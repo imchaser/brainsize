@@ -1,9 +1,8 @@
 package presentations;
 
 import DAOs.CAUHOIdao;
-import java.util.ArrayList;
 import java.util.Vector;
-import javax.swing.JOptionPane;
+import javax.swing.JButton;
 import services.PlayGameService;
 
 public class PlayGameScreen extends javax.swing.JFrame {
@@ -15,9 +14,10 @@ public class PlayGameScreen extends javax.swing.JFrame {
     CAUHOIdao ch = new CAUHOIdao();
     private PlayGameService.Timing t = null;
     private RankScreen rank = new RankScreen();
+
     public PlayGameScreen() {
         initComponents();
-        t = gameservice.new Timing(lblCountTime,this,rank);
+        t = gameservice.new Timing(lblCountTime, this, rank);
         id = gameservice.getIDCH(stt, v);
         setText(id);
         this.setSize(600, 600);
@@ -40,8 +40,8 @@ public class PlayGameScreen extends javax.swing.JFrame {
         btnC = new javax.swing.JButton();
         btnD = new javax.swing.JButton();
         btnA = new javax.swing.JButton();
-        btn5050 = new javax.swing.JButton();
         btnDoiCH = new javax.swing.JButton();
+        btn5050 = new javax.swing.JButton();
         lblSTT = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         taCauHoi = new javax.swing.JTextArea();
@@ -91,16 +91,19 @@ public class PlayGameScreen extends javax.swing.JFrame {
             }
         });
 
-        btn5050.setText("Đổi");
-
-        btnDoiCH.setText("50:50");
+        btnDoiCH.setText("Đổi");
         btnDoiCH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDoiCHActionPerformed(evt);
             }
         });
 
-        lblSTT.setText("Câu :");
+        btn5050.setText("50:50");
+        btn5050.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn5050ActionPerformed(evt);
+            }
+        });
 
         taCauHoi.setEditable(false);
         taCauHoi.setColumns(20);
@@ -165,9 +168,9 @@ public class PlayGameScreen extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(btnTattieng))
                                             .addGroup(pnBackgroundLayout.createSequentialGroup()
-                                                .addComponent(btnDoiCH)
+                                                .addComponent(btn5050)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btn5050, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(btnDoiCH, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGap(12, 12, 12))))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnBackgroundLayout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,12 +200,12 @@ public class PlayGameScreen extends javax.swing.JFrame {
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(34, 34, 34)
                                 .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(21, 62, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnBackgroundLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnDoiCH)
-                            .addComponent(btn5050))
+                            .addComponent(btn5050)
+                            .addComponent(btnDoiCH))
                         .addGap(9, 9, 9)))
                 .addComponent(lblSTT)
                 .addGap(18, 18, 18)
@@ -242,43 +245,19 @@ public class PlayGameScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAActionPerformed
-        boolean kq = gameservice.ktKQ(id, btnA.getText());
-        if (kq == true) {
-            stt++;
-            id = gameservice.getIDCH(stt, v);
-            setText(id);
-            t.reSet();
-        }
+        checkAns(btnA);
     }//GEN-LAST:event_btnAActionPerformed
 
     private void btnBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBActionPerformed
-        boolean kq = gameservice.ktKQ(id, btnB.getText());
-        if (kq == true) {
-            stt++;
-            id = gameservice.getIDCH(stt, v);
-            setText(id);
-            t.reSet();
-        }
+        checkAns(btnB);
     }//GEN-LAST:event_btnBActionPerformed
 
     private void btnCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCActionPerformed
-        boolean kq = gameservice.ktKQ(id, btnC.getText());
-        if (kq == true) {
-            stt++;
-            id = gameservice.getIDCH(stt, v);
-            setText(id);
-            t.reSet();
-        }
+        checkAns(btnC);
     }//GEN-LAST:event_btnCActionPerformed
 
     private void btnDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDActionPerformed
-        boolean kq = gameservice.ktKQ(id, btnD.getText());
-        if (kq == true) {
-            stt++;
-            id = gameservice.getIDCH(stt, v);
-            setText(id);
-            t.reSet();
-        }
+        checkAns(btnD);
     }//GEN-LAST:event_btnDActionPerformed
 
     private void jTextField1CaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_jTextField1CaretUpdate
@@ -289,8 +268,27 @@ public class PlayGameScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void btn5050ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5050ActionPerformed
+        int i = 0;
+        String kq = ch.getCH(id).getKetQua();
+        if (!btnA.getText().equals(kq)) {
+            btnA.setText("");
+            i++;
+        }  if (!btnC.getText().equals(kq) && i < 2) {
+            btnC.setText("");
+            i++;
+        }  if (!btnB.getText().equals(kq) && i < 2) {
+            btnB.setText("");
+            i++;
+        }  if (!btnD.getText().equals(kq) && i < 2) {
+            btnD.setText("");
+            i++;
+        }
+    }//GEN-LAST:event_btn5050ActionPerformed
+
     private void btnDoiCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoiCHActionPerformed
-    
+      id=gameservice.getIDCH(stt, v);
+        setText(id);
     }//GEN-LAST:event_btnDoiCHActionPerformed
 
     /**
@@ -349,6 +347,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
     private javax.swing.JTextArea taCauHoi;
     // End of variables declaration//GEN-END:variables
     public void setText(int id) {
+        lblSTT.setText("Câu hỏi "+stt+" :");
         taCauHoi.setText(ch.getCH(id).getCauHoi());
         btnA.setText(ch.getCH(id).getDapAn1());
         btnB.setText(ch.getCH(id).getDapAn2());
@@ -356,4 +355,16 @@ public class PlayGameScreen extends javax.swing.JFrame {
         btnD.setText(ch.getCH(id).getDapAn4());
     }
 
+    public void checkAns(JButton btn) {
+        boolean kq = gameservice.ktKQ(id, btn.getText());
+        if (kq == true) {
+            stt++;
+            id = gameservice.getIDCH(stt, v);
+            setText(id);
+            t.reSet();
+        } else {
+            rank.setVisible(true);
+            this.dispose();
+        }
+    }
 }

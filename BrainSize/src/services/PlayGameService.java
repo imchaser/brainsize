@@ -43,7 +43,7 @@ public class PlayGameService {
             JOptionPane.showMessageDialog(null, "Bạn đã trả lời đúng!", "Chúc mừng!", 1);
             return true;
         } else {
-            JOptionPane.showMessageDialog(null, "Rất tiếc, bạn trả lời sai rồi", "GG!", 2);
+            JOptionPane.showMessageDialog(null, "Rất tiếc, bạn đã trả lời sai!", "GG!", 2);
             return false;
         }
     }
@@ -81,9 +81,9 @@ public class PlayGameService {
                 }
                 lbltime.setText(time);
                 if (lbltime.getText().equals("0:00")) {
-                    JOptionPane.showMessageDialog(null, "hết giờ");
+                    JOptionPane.showMessageDialog(null, "Game over!");
                     over.setVisible(true);
-                    play.setVisible(false);
+                    play.dispose();
                 }
                 try {
                     j++;

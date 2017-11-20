@@ -116,9 +116,9 @@
                                                   <Component id="btnTattieng" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" attributes="0">
-                                                  <Component id="btnDoiCH" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn5050" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="btn5050" min="-2" pref="61" max="-2" attributes="0"/>
+                                                  <Component id="btnDoiCH" min="-2" pref="61" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -166,13 +166,13 @@
                                   <Component id="lblLogo" min="-2" pref="191" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="21" pref="62" max="32767" attributes="0"/>
+                          <EmptySpace min="21" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnDoiCH" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btn5050" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnDoiCH" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                       </Group>
@@ -254,23 +254,23 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btn5050">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#x110;&#x1ed5;i"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JButton" name="btnDoiCH">
           <Properties>
-            <Property name="text" type="java.lang.String" value="50:50"/>
+            <Property name="text" type="java.lang.String" value="&#x110;&#x1ed5;i"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDoiCHActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblSTT">
+        <Component class="javax.swing.JButton" name="btn5050">
           <Properties>
-            <Property name="text" type="java.lang.String" value="C&#xe2;u :"/>
+            <Property name="text" type="java.lang.String" value="50:50"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn5050ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblSTT">
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
