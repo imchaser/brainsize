@@ -5,8 +5,6 @@
  */
 package presentations;
 
-import java.awt.FlowLayout;
-
 /**
  *
  * @author huy

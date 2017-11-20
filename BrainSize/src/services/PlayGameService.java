@@ -7,15 +7,12 @@ import java.util.Vector;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import presentations.PlayGameScreen;
-import presentations.RankScreen;
-import presentations.StartGame;
 
 public class PlayGameService {
 
     private CAUHOIdao ch = new CAUHOIdao();
     private ArrayList<CAUHOIdao> listCH = null;
-    public int getIDCH(int stt, Vector v) {
+    public int getIDCH(int stt, Vector listID) {
         int a = 0;
         int min = 1;
         Random rd = new Random();
@@ -27,11 +24,11 @@ public class PlayGameService {
             listCH = ch.getListCH(3);
         }
         min = listCH.get(0).getIDCH();
-        if (!v.contains(a)) {
+        if (!listID.contains(a)) {
             a = rd.ints(min, listCH.size() + 1).limit(1).findFirst().getAsInt();
-            v.add(a);
+            listID.add(a);
         } else {
-            while (v.contains(a)) {
+            while (listID.contains(a)) {
                 a = rd.ints(min, listCH.size() + 1).limit(1).findFirst().getAsInt();
             }
         }

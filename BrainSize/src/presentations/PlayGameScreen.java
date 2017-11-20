@@ -1,12 +1,13 @@
 package presentations;
 
 import DAOs.CAUHOIdao;
+import java.util.Random;
 import java.util.Vector;
 import javax.swing.JButton;
 import services.PlayGameService;
 
 public class PlayGameScreen extends javax.swing.JFrame {
-
+    
     private PlayGameService gameservice = new PlayGameService();
     private int stt = 1;
     private Vector v = new Vector();
@@ -14,7 +15,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
     CAUHOIdao ch = new CAUHOIdao();
     private PlayGameService.Timing t = null;
     private RankScreen rank = new RankScreen();
-
+    
     public PlayGameScreen() {
         initComponents();
         t = gameservice.new Timing(lblCountTime, this, rank);
@@ -24,7 +25,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         t.start();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -45,15 +46,16 @@ public class PlayGameScreen extends javax.swing.JFrame {
         lblSTT = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         taCauHoi = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
 
         jButton3.setText("jButton3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(600, 600));
 
         pnBackground.setMaximumSize(new java.awt.Dimension(600, 600));
         pnBackground.setMinimumSize(new java.awt.Dimension(600, 600));
         pnBackground.setName(""); // NOI18N
+        pnBackground.setPreferredSize(new java.awt.Dimension(600, 600));
 
         lblCountTime.setFont(new java.awt.Font("Maiandra GD", 1, 48)); // NOI18N
         lblCountTime.setText("1:00");
@@ -63,9 +65,11 @@ public class PlayGameScreen extends javax.swing.JFrame {
         lblLogo.setBackground(new java.awt.Color(0, 51, 51));
         lblLogo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        btnBattieng.setText("jButton1");
+        btnBattieng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/on.png"))); // NOI18N
+        btnBattieng.setPreferredSize(new java.awt.Dimension(30, 30));
 
-        btnTattieng.setText("jButton2");
+        btnTattieng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Mute_Icon.svg.png"))); // NOI18N
+        btnTattieng.setPreferredSize(new java.awt.Dimension(30, 30));
 
         btnB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,6 +96,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
         });
 
         btnDoiCH.setText("Đổi");
+        btnDoiCH.setPreferredSize(new java.awt.Dimension(60, 23));
         btnDoiCH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDoiCHActionPerformed(evt);
@@ -99,6 +104,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
         });
 
         btn5050.setText("50:50");
+        btn5050.setPreferredSize(new java.awt.Dimension(60, 30));
         btn5050.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn5050ActionPerformed(evt);
@@ -107,20 +113,9 @@ public class PlayGameScreen extends javax.swing.JFrame {
 
         taCauHoi.setEditable(false);
         taCauHoi.setColumns(20);
+        taCauHoi.setLineWrap(true);
         taCauHoi.setRows(3);
         jScrollPane1.setViewportView(taCauHoi);
-
-        jTextField1.setText("jTextField1");
-        jTextField1.addCaretListener(new javax.swing.event.CaretListener() {
-            public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                jTextField1CaretUpdate(evt);
-            }
-        });
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout pnBackgroundLayout = new javax.swing.GroupLayout(pnBackground);
         pnBackground.setLayout(pnBackgroundLayout);
@@ -130,14 +125,8 @@ public class PlayGameScreen extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnBackgroundLayout.createSequentialGroup()
-                        .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(pnBackgroundLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(lblScore))
-                            .addGroup(pnBackgroundLayout.createSequentialGroup()
-                                .addGap(133, 133, 133)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblScore)
                         .addGap(107, 107, 107))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnBackgroundLayout.createSequentialGroup()
                         .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -161,16 +150,17 @@ public class PlayGameScreen extends javax.swing.JFrame {
                                         .addComponent(lblSTT)
                                         .addGap(0, 0, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnBackgroundLayout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
                                         .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(pnBackgroundLayout.createSequentialGroup()
-                                                .addComponent(btnBattieng)
+                                                .addGap(0, 467, Short.MAX_VALUE)
+                                                .addComponent(btnBattieng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btnTattieng))
+                                                .addComponent(btnTattieng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(pnBackgroundLayout.createSequentialGroup()
-                                                .addComponent(btn5050)
+                                                .addGap(398, 398, 398)
+                                                .addComponent(btn5050, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btnDoiCH, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(btnDoiCH, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGap(12, 12, 12))))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnBackgroundLayout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -186,8 +176,8 @@ public class PlayGameScreen extends javax.swing.JFrame {
                             .addGroup(pnBackgroundLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnBattieng)
-                                    .addComponent(btnTattieng))
+                                    .addComponent(btnBattieng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnTattieng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(pnBackgroundLayout.createSequentialGroup()
                                         .addGap(101, 101, 101)
@@ -196,16 +186,14 @@ public class PlayGameScreen extends javax.swing.JFrame {
                                         .addGap(85, 85, 85)
                                         .addComponent(lblCountTime))))
                             .addGroup(pnBackgroundLayout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(34, 34, 34)
-                                .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(76, 76, 76)
+                                .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(21, 42, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnBackgroundLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn5050)
-                            .addComponent(btnDoiCH))
+                            .addComponent(btn5050, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnDoiCH, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(9, 9, 9)))
                 .addComponent(lblSTT)
                 .addGap(18, 18, 18)
@@ -260,34 +248,29 @@ public class PlayGameScreen extends javax.swing.JFrame {
         checkAns(btnD);
     }//GEN-LAST:event_btnDActionPerformed
 
-    private void jTextField1CaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_jTextField1CaretUpdate
-
-    }//GEN-LAST:event_jTextField1CaretUpdate
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void btn5050ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5050ActionPerformed
         int i = 0;
         String kq = ch.getCH(id).getKetQua();
         if (!btnA.getText().equals(kq)) {
             btnA.setText("");
             i++;
-        }  if (!btnC.getText().equals(kq) && i < 2) {
+        }
+        if (!btnC.getText().equals(kq) && i < 2) {
             btnC.setText("");
             i++;
-        }  if (!btnB.getText().equals(kq) && i < 2) {
+        }
+        if (!btnB.getText().equals(kq) && i < 2) {
             btnB.setText("");
             i++;
-        }  if (!btnD.getText().equals(kq) && i < 2) {
+        }
+        if (!btnD.getText().equals(kq) && i < 2) {
             btnD.setText("");
             i++;
         }
     }//GEN-LAST:event_btn5050ActionPerformed
 
     private void btnDoiCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoiCHActionPerformed
-      id=gameservice.getIDCH(stt, v);
+        id = gameservice.getIDCH(stt, v);
         setText(id);
     }//GEN-LAST:event_btnDoiCHActionPerformed
 
@@ -338,7 +321,6 @@ public class PlayGameScreen extends javax.swing.JFrame {
     private javax.swing.JButton btnTattieng;
     private javax.swing.JButton jButton3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblCountTime;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblSTT;
@@ -346,15 +328,25 @@ public class PlayGameScreen extends javax.swing.JFrame {
     private javax.swing.JPanel pnBackground;
     private javax.swing.JTextArea taCauHoi;
     // End of variables declaration//GEN-END:variables
-    public void setText(int id) {
-        lblSTT.setText("Câu hỏi "+stt+" :");
+    private void setText(int id) {
+          int da =0;
+        Vector listDA = new Vector();
+        Random rd = new Random();
+        for(int i=1; i<=4;){
+             da=rd.ints(1, 5).limit(1).findFirst().getAsInt();
+            if(!listDA.contains(da)){               
+                listDA.add(da);
+                i++;
+            }
+        }
+        lblSTT.setText("Câu hỏi " + stt + " :");
         taCauHoi.setText(ch.getCH(id).getCauHoi());
         btnA.setText(ch.getCH(id).getDapAn1());
         btnB.setText(ch.getCH(id).getDapAn2());
         btnC.setText(ch.getCH(id).getDapAn3());
         btnD.setText(ch.getCH(id).getDapAn4());
     }
-
+    
     public void checkAns(JButton btn) {
         boolean kq = gameservice.ktKQ(id, btn.getText());
         if (kq == true) {

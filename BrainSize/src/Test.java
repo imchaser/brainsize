@@ -24,10 +24,16 @@ public class Test {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Vector v = new Vector();
-        for(int i=1;i<=5;i++){
-        System.out.println(sv.getIDCH(i,v));
-            System.out.println(v.size());
+       int da =0;
+        Vector listDA = new Vector();
+        Random rd = new Random();
+        for(int i=1; i<=4;){
+             da=rd.ints(1, 5).limit(1).findFirst().getAsInt();
+            if(!listDA.contains(da)){               
+                listDA.add(da);
+                System.out.println(da);
+                i++;
+            }
         }
  
     }
