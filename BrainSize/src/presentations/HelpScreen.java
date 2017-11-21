@@ -29,8 +29,8 @@ public class HelpScreen extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(600, 600));
 
         taHelp.setColumns(20);
+        taHelp.setLineWrap(true);
         taHelp.setRows(5);
-        taHelp.setWrapStyleWord(true);
         jScrollPane1.setViewportView(taHelp);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
