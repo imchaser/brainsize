@@ -11,5 +11,6 @@
     <property name="show_sql">true</property>
     <property name="current_session_context_class">thread</property>
     <mapping class="DAOs.CAUHOIdao"/>
+    <mapping class="DAOs.BANGDIEMdao"/>
   </session-factory>
 </hibernate-configuration>

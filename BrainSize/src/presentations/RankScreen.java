@@ -1,9 +1,20 @@
 package presentations;
 
+import services.OtherService;
+
 public class RankScreen extends javax.swing.JFrame {
 
+    private OtherService otherService = new OtherService();
+    
     public RankScreen() {
         initComponents();
+        
+        txtTop1.setText(otherService.rank(1));
+        txtTop2.setText(otherService.rank(2));
+        txtTop3.setText(otherService.rank(3));
+        txtTop4.setText(otherService.rank(4));
+        txtTop5.setText(otherService.rank(5));
+        
         setSize(600, 600);
         setLocationRelativeTo(null);
     }
@@ -29,6 +40,12 @@ public class RankScreen extends javax.swing.JFrame {
         lblRank.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblRank.setForeground(new java.awt.Color(153, 0, 0));
         lblRank.setText("BẢNG ĐIỂM");
+
+        txtTop4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTop4ActionPerformed(evt);
+            }
+        });
 
         btnBackRank.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,11 +87,11 @@ public class RankScreen extends javax.swing.JFrame {
                 .addComponent(txtTop2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addComponent(txtTop3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(txtTop5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(39, 39, 39)
                 .addComponent(txtTop4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(36, 36, 36)
+                .addComponent(txtTop5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addComponent(btnBackRank, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58))
         );
@@ -99,6 +116,10 @@ public class RankScreen extends javax.swing.JFrame {
         st.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnBackRankActionPerformed
+
+    private void txtTop4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTop4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTop4ActionPerformed
 
     /**
      * @param args the command line arguments
