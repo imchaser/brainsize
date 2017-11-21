@@ -1,9 +1,14 @@
 package presentations;
 
+import services.OtherService;
+
 public class HelpScreen extends javax.swing.JFrame {
 
+    private OtherService otherService = new OtherService();
     public HelpScreen() {
         initComponents();
+        
+        taHelp.setText(otherService.helpText("huongdan.txt"));
         
         setSize(600, 600);
         setLocationRelativeTo(null);
@@ -14,7 +19,7 @@ public class HelpScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        taHelp = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         btnBackHelp = new javax.swing.JButton();
 
@@ -23,10 +28,10 @@ public class HelpScreen extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(600, 600));
         setSize(new java.awt.Dimension(600, 600));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("+ Sau khi giao diện trò chơi được mở bạn sẽ thấy\n xuất hiêjn giao diện của trò chơi\n+ Bạn có thể click để chơi ngay hoặc xem bảng xếp\n hạng nế đã từng chơi hoặc ấn thoát ngay\n+ Trò chơi bao gồm 15 câu hỏi chia làm ba mốc 5,\n 10 và 15 kết thúc 15 câu hỏi bạn sẽ đạt tối đa 15\n điểm và được lưu tên lại \n+ Trong quá trình chơi game bạn có 2 sự chơi giúp \n đó là 50/50 bạn được phép loại bỏ đi 2 phương án \n sai , và có quyền next câu hỏi tuy nhiên việc next\n câu hỏi đồng nghĩa bạn sẽ bị trừ đi 1 điểm .\n+ kết thúc trò chơi ban sẽ được lưu điểm và có thể\n ấn tiếp tục để chơi tiếp \n+ chúc các bạn chơi game vui vẻ !.");
-        jScrollPane1.setViewportView(jTextArea1);
+        taHelp.setColumns(20);
+        taHelp.setRows(5);
+        taHelp.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(taHelp);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 0, 0));
@@ -113,6 +118,6 @@ public class HelpScreen extends javax.swing.JFrame {
     private javax.swing.JButton btnBackHelp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea taHelp;
     // End of variables declaration//GEN-END:variables
 }
