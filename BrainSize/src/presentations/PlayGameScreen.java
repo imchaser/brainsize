@@ -343,10 +343,10 @@ public class PlayGameScreen extends javax.swing.JFrame {
         }
         lblSTT.setText("Câu hỏi " + stt + " :");
         taCauHoi.setText(ch.getCH(id).getCauHoi());
-        btnA.setText("A.  " + gameservice.getDA(id, (int) listDA.get(0)));
-        btnB.setText("B.  " + gameservice.getDA(id, (int) listDA.get(1)));
-        btnC.setText("C.  " + gameservice.getDA(id, (int) listDA.get(2)));
-        btnD.setText("D.  " + gameservice.getDA(id, (int) listDA.get(3)));
+        btnA.setText(gameservice.getDA(id, (int) listDA.get(0)));
+        btnB.setText(gameservice.getDA(id, (int) listDA.get(1)));
+        btnC.setText(gameservice.getDA(id, (int) listDA.get(2)));
+        btnD.setText(gameservice.getDA(id, (int) listDA.get(3)));
     }
 
     public void checkAnswer(JButton btn) {
