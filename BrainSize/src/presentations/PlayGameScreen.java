@@ -233,19 +233,19 @@ public class PlayGameScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAActionPerformed
-        checkAns(btnA);
+        checkAnswer(btnA);
     }//GEN-LAST:event_btnAActionPerformed
 
     private void btnBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBActionPerformed
-        checkAns(btnB);
+        checkAnswer(btnB);
     }//GEN-LAST:event_btnBActionPerformed
 
     private void btnCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCActionPerformed
-        checkAns(btnC);
+        checkAnswer(btnC);
     }//GEN-LAST:event_btnCActionPerformed
 
     private void btnDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDActionPerformed
-        checkAns(btnD);
+        checkAnswer(btnD);
     }//GEN-LAST:event_btnDActionPerformed
 
     private void btn5050ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5050ActionPerformed
@@ -267,11 +267,13 @@ public class PlayGameScreen extends javax.swing.JFrame {
             btnD.setText("");
             i++;
         }
+        btn5050.setEnabled(false);
     }//GEN-LAST:event_btn5050ActionPerformed
 
     private void btnDoiCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoiCHActionPerformed
         id = gameservice.getIDCH(stt, v);
         setText(id);
+        btnDoiCH.setEnabled(false);
     }//GEN-LAST:event_btnDoiCHActionPerformed
 
     /**
@@ -341,13 +343,13 @@ public class PlayGameScreen extends javax.swing.JFrame {
         }
         lblSTT.setText("Câu hỏi " + stt + " :");
         taCauHoi.setText(ch.getCH(id).getCauHoi());
-        btnA.setText(gameservice.getDA(id, (int) listDA.get(0)));
-        btnB.setText(gameservice.getDA(id, (int) listDA.get(1)));
-        btnC.setText(gameservice.getDA(id, (int) listDA.get(2)));
-        btnD.setText(gameservice.getDA(id, (int) listDA.get(3)));
+        btnA.setText("A.  " + gameservice.getDA(id, (int) listDA.get(0)));
+        btnB.setText("B.  " + gameservice.getDA(id, (int) listDA.get(1)));
+        btnC.setText("C.  " + gameservice.getDA(id, (int) listDA.get(2)));
+        btnD.setText("D.  " + gameservice.getDA(id, (int) listDA.get(3)));
     }
 
-    public void checkAns(JButton btn) {
+    public void checkAnswer(JButton btn) {
         boolean kq = gameservice.ktKQ(id, btn.getText());
         if (kq == true) {
             stt++;
@@ -356,6 +358,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
             t.reSet();
         } else {
             rank.setVisible(true);
+            t.stop();
             this.dispose();
         }
     }
