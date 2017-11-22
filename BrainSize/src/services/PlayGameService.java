@@ -57,10 +57,8 @@ public class PlayGameService {
 
     public boolean ktKQ(int id, String kq) {
         if (ch.getCH(id).getKetQua().equals(kq)) {
-            JOptionPane.showMessageDialog(null, "Bạn đã trả lời đúng!", "Chúc mừng!", 1);
             return true;
         } else {
-            JOptionPane.showMessageDialog(null, "Rất tiếc, bạn đã trả lời sai!", "GG!", 2);
             return false;
         }
     }

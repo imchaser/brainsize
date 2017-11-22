@@ -2,6 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/ImChaser/Documents/GitHub/brainsize/BrainSize/src/services/PlayGameService.java</file>
+            <file>file:/C:/Users/ImChaser/Documents/GitHub/brainsize/BrainSize/src/services/OtherService.java</file>
+            <file>file:/C:/Users/ImChaser/Documents/GitHub/brainsize/BrainSize/src/presentations/StartGame.java</file>
+            <file>file:/C:/Users/ImChaser/Documents/GitHub/brainsize/BrainSize/src/presentations/HelpScreen.java</file>
+            <file>file:/C:/Users/ImChaser/Documents/GitHub/brainsize/BrainSize/src/DAOs/CAUHOIdao.java</file>
+            <file>file:/C:/Users/ImChaser/Documents/GitHub/brainsize/BrainSize/src/presentations/PlayGameScreen.java</file>
+            <file>file:/C:/Users/ImChaser/Documents/GitHub/brainsize/BrainSize/src/presentations/RankScreen.java</file>
+            <file>file:/C:/Users/ImChaser/Documents/GitHub/brainsize/BrainSize/src/Test.java</file>
+        </group>
     </open-files>
 </project-private>

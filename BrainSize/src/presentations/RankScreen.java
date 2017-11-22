@@ -15,8 +15,15 @@ public class RankScreen extends javax.swing.JFrame {
         txtTop4.setText(otherService.rank(4));
         txtTop5.setText(otherService.rank(5));
         
+        txtTop1.setEditable(false);
+        txtTop2.setEditable(false);
+        txtTop3.setEditable(false);
+        txtTop4.setEditable(false);
+        txtTop5.setEditable(false);
+        
         setSize(600, 600);
         setLocationRelativeTo(null);
+        setTitle("Brainsize");
     }
 
     @SuppressWarnings("unchecked")
@@ -47,6 +54,7 @@ public class RankScreen extends javax.swing.JFrame {
             }
         });
 
+        btnBackRank.setText("Back");
         btnBackRank.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackRankActionPerformed(evt);
@@ -69,7 +77,7 @@ public class RankScreen extends javax.swing.JFrame {
                             .addComponent(txtTop3, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTop5, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTop4, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBackRank, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnBackRank))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(pnRankLayout.createSequentialGroup()
                 .addGap(204, 204, 204)

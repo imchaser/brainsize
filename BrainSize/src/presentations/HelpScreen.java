@@ -12,6 +12,7 @@ public class HelpScreen extends javax.swing.JFrame {
         
         setSize(600, 600);
         setLocationRelativeTo(null);
+        setTitle("Brainsize");
     }
 
     @SuppressWarnings("unchecked")
@@ -38,6 +39,7 @@ public class HelpScreen extends javax.swing.JFrame {
         jLabel1.setText("CÁCH CHƠI :");
 
         btnBackHelp.setBackground(new java.awt.Color(0, 102, 102));
+        btnBackHelp.setText("Back");
         btnBackHelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackHelpActionPerformed(evt);
@@ -51,9 +53,9 @@ public class HelpScreen extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(102, 102, 102)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBackHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBackHelp))
                 .addContainerGap(89, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

@@ -4,6 +4,7 @@ import DAOs.CAUHOIdao;
 import java.util.Random;
 import java.util.Vector;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import services.PlayGameService;
 
 public class PlayGameScreen extends javax.swing.JFrame {
@@ -23,6 +24,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
         setText(id);
         this.setSize(600, 600);
         setLocationRelativeTo(null);
+        setTitle("Brainsize");
         t.start();
     }
 
@@ -157,13 +159,14 @@ public class PlayGameScreen extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(btnTattieng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(pnBackgroundLayout.createSequentialGroup()
-                                                .addGap(398, 398, 398)
-                                                .addComponent(btn5050, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(btnDoiCH, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGap(389, 389, 389)
+                                                .addComponent(btn5050, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, Short.MAX_VALUE)))
                                         .addGap(12, 12, 12))))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnBackgroundLayout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btnDoiCH, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(25, 25, 25))))
         );
@@ -352,11 +355,13 @@ public class PlayGameScreen extends javax.swing.JFrame {
     public void checkAnswer(JButton btn) {
         boolean kq = gameservice.ktKQ(id, btn.getText());
         if (kq == true) {
+            JOptionPane.showMessageDialog(null, "Bạn đã trả lời đúng!", "Chúc mừng!", 1);
             stt++;
             id = gameservice.getIDCH(stt, v);
             setText(id);
             t.reSet();
         } else {
+            JOptionPane.showMessageDialog(null, "Rất tiếc, bạn đã trả lời sai!", "GG!", 2);
             rank.setVisible(true);
             t.stop();
             this.dispose();
