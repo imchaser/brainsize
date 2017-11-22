@@ -1,6 +1,6 @@
 package presentations;
 
-import DAOs.CAUHOIdao;
+import DAOs.CauHoiDAO;
 import java.util.Random;
 import java.util.Vector;
 import javax.swing.JButton;
@@ -13,7 +13,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
     private int stt = 1;
     private Vector v = new Vector();
     private int id = 0;
-    CAUHOIdao ch = new CAUHOIdao();
+    CauHoiDAO ch = new CauHoiDAO();
     private PlayGameService.Timing t = null;
     private RankScreen rank = new RankScreen();
 

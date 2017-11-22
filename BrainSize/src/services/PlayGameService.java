@@ -1,6 +1,7 @@
 package services;
 
-import DAOs.CAUHOIdao;
+import DAOs.CauHoiDAO;
+import Entities.CauHoi;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Vector;
@@ -10,8 +11,8 @@ import javax.swing.JOptionPane;
 
 public class PlayGameService {
 
-    private CAUHOIdao ch = new CAUHOIdao();
-    private ArrayList<CAUHOIdao> listCH = null;
+    private CauHoiDAO ch = new CauHoiDAO();
+    private ArrayList<CauHoi> listCH = null;
 
     public int getIDCH(int stt, Vector listID) {
         int a = 0;

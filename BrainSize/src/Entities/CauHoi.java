@@ -1,18 +1,10 @@
-package DAOs;
+package Entities;
 
-import Util.HibernateUtil;
-import java.util.ArrayList;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "CAUHOI")
-public class CAUHOIdao {
+@Table(name = "CauHoi")
+public class CauHoi {
 
     @Id
     @Column(name = "IDCH")
@@ -32,10 +24,10 @@ public class CAUHOIdao {
     @Column(name = "MucDo")
     private int MucDo;
 
-    public CAUHOIdao() {
+    public CauHoi() {
     }
 
-    public CAUHOIdao(int IDCH, String CauHoi, String DapAn1, String DapAn2, String DapAn3, String DapAn4, String KetQua, int MucDo) {
+    public CauHoi(int IDCH, String CauHoi, String DapAn1, String DapAn2, String DapAn3, String DapAn4, String KetQua, int MucDo) {
         this.IDCH = IDCH;
         this.CauHoi = CauHoi;
         this.DapAn1 = DapAn1;
@@ -109,38 +101,4 @@ public class CAUHOIdao {
     public void setMucDo(int MucDo) {
         this.MucDo = MucDo;
     }
-    //cac phương thức của câu hỏi
-
-    public ArrayList<CAUHOIdao> getListCH(int mucdo) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction tr = null;
-        ArrayList<CAUHOIdao> lst = null;
-        try {
-            tr = session.beginTransaction();
-            lst = (ArrayList<CAUHOIdao>) session.createQuery("from CAUHOIdao where MucDo= " + mucdo).list();
-            tr.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
-        return lst;
-    }
-
-    public CAUHOIdao getCH(int id) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction tr = null;
-        CAUHOIdao ch = null;
-        try {
-            tr = session.beginTransaction();
-            ch = (CAUHOIdao) session.createQuery("from CAUHOIdao where IDCH =" + id).uniqueResult();
-            tr.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
-        return ch;
-    }
-
 }

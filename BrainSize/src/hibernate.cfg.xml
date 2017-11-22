@@ -10,7 +10,7 @@
     <property name="connection.pool_size">1</property>
     <property name="show_sql">true</property>
     <property name="current_session_context_class">thread</property>
-    <mapping class="DAOs.CAUHOIdao"/>
-    <mapping class="DAOs.BANGDIEMdao"/>
+    <mapping class="Entities.CauHoi"/>
+    <mapping class="Entities.BangDiem"/>
   </session-factory>
 </hibernate-configuration>
