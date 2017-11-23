@@ -1,12 +1,12 @@
 package services;
 
-import DAOs.BANGDIEMdao;
+import DAOs.BangDiemDAO;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
 public class OtherService {
 
-    private BANGDIEMdao bd = new BANGDIEMdao();
+    private BangDiemDAO bd = new BangDiemDAO();
 
     public String rank(int top) {
         return bd.getRank(top).getTen() + " - " + bd.getRank(top).getDiem();

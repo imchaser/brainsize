@@ -1,31 +1,48 @@
 package presentations;
 
+<<<<<<< HEAD
 import DAOs.CAUHOIdao;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+=======
+import DAOs.CauHoiDAO;
+>>>>>>> 066f1d467eb93011b9b99efb2ae73d3783c15dcc
 import java.util.Random;
 import java.util.Vector;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 import services.PlayGameService;
+
+;
 
 public class PlayGameScreen extends javax.swing.JFrame {
 
     private PlayGameService gameservice = new PlayGameService();
+<<<<<<< HEAD
+    private int stt = 1; //số thứ tự của câu hỏi
+    private Vector listIDCH = new Vector(); //danh sách ID câu hỏi
+    private int idCH = 0; //id câu hỏi
+    CAUHOIdao ch = new CAUHOIdao();
+=======
     private int stt = 1;
     private Vector v = new Vector();
     private int id = 0;
-    CAUHOIdao ch = new CAUHOIdao();
+    CauHoiDAO ch = new CauHoiDAO();
     private PlayGameService.Timing t = null;
+>>>>>>> 066f1d467eb93011b9b99efb2ae73d3783c15dcc
     private RankScreen rank = new RankScreen();
+    private int time = 60; //thời gian đếm ngược (giây)
+    private Timer t = new Timer(1000, countTime());
 
     public PlayGameScreen() {
         initComponents();
-        t = gameservice.new Timing(lblCountTime, this, rank);
-        id = gameservice.getIDCH(stt, v);
-        setText(id);
+        t.start();
+        idCH = gameservice.getIDCH(stt, listIDCH);
+        setText(idCH);
         this.setSize(600, 600);
         setLocationRelativeTo(null);
         setTitle("Brainsize");
-        t.start();
     }
 
     @SuppressWarnings("unchecked")
@@ -252,8 +269,8 @@ public class PlayGameScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDActionPerformed
 
     private void btn5050ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5050ActionPerformed
-        int i = 0;
-        String kq = ch.getCH(id).getKetQua();
+      int i = 0;
+        String kq = ch.getCH(idCH).getKetQua();
         if (!btnA.getText().equals(kq)) {
             btnA.setText("");
             i++;
@@ -274,8 +291,8 @@ public class PlayGameScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_btn5050ActionPerformed
 
     private void btnDoiCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoiCHActionPerformed
-        id = gameservice.getIDCH(stt, v);
-        setText(id);
+        idCH = gameservice.getIDCH(stt, listIDCH);
+        setText(idCH);
         btnDoiCH.setEnabled(false);
     }//GEN-LAST:event_btnDoiCHActionPerformed
 
@@ -352,19 +369,46 @@ public class PlayGameScreen extends javax.swing.JFrame {
         btnD.setText(gameservice.getDA(id, (int) listDA.get(3)));
     }
 
+    //kiểm tra đáp án, đúng reset thời gian và đổi câu hỏi/sai dừng thời gian và hiện bảng điểm
     public void checkAnswer(JButton btn) {
-        boolean kq = gameservice.ktKQ(id, btn.getText());
+        boolean kq = gameservice.ktKQ(idCH, btn.getText());
         if (kq == true) {
             JOptionPane.showMessageDialog(null, "Bạn đã trả lời đúng!", "Chúc mừng!", 1);
-            stt++;
-            id = gameservice.getIDCH(stt, v);
-            setText(id);
-            t.reSet();
+            if (stt == 15) {
+                JOptionPane.showMessageDialog(null, "Bạn đã chiến thắng trò chơi!", "Chúc mừng!", 1);
+                rank.setVisible(true);
+            } else {
+                stt++;
+                idCH = gameservice.getIDCH(stt, listIDCH);
+                time = 60;
+                setText(idCH);
+            }
         } else {
             JOptionPane.showMessageDialog(null, "Rất tiếc, bạn đã trả lời sai!", "GG!", 2);
+            JOptionPane.showInputDialog(null, "Tên người chơi:", gameservice.score(stt), 1);
             rank.setVisible(true);
             t.stop();
-            this.dispose();
+            dispose();
         }
+    }
+//đếm ngược thời gian
+
+    private ActionListener countTime() {
+        ActionListener act = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                lblCountTime.setText(gameservice.displayTime(time));
+                time--;
+                if (time < 0) {
+                    JOptionPane.showMessageDialog(null, "Game over!");
+                    t.stop();
+                    dispose();
+                    rank.setVisible(true);
+                }
+            }
+
+        };
+        return act;
+
     }
 }

@@ -1,20 +1,19 @@
 package services;
 
-import DAOs.CAUHOIdao;
+import DAOs.CauHoiDAO;
+import Entities.CauHoi;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Vector;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 public class PlayGameService {
 
-    private CAUHOIdao ch = new CAUHOIdao();
-    private ArrayList<CAUHOIdao> listCH = null;
+    private CauHoiDAO ch = new CauHoiDAO();
+    private ArrayList<CauHoi> listCH = null;
 
+    //lấy ra ngẫu nhiên id câu hỏi
     public int getIDCH(int stt, Vector listID) {
-        int a = 0;
+        int id = 0;
         int min = 1;
         Random rd = new Random();
         if (stt <= 5) {
@@ -25,15 +24,16 @@ public class PlayGameService {
             listCH = ch.getListCH(3);
         }
         min = listCH.get(0).getIDCH();
-        if (!listID.contains(a)) {
+        if (!listID.contains(id)) {
             do {
-                a = rd.ints(min, listCH.size() + 1).limit(1).findFirst().getAsInt();
-            } while (listID.contains(a));
-            listID.add(a);
+                id = rd.ints(min, listCH.size() + 1).limit(1).findFirst().getAsInt();
+            } while (listID.contains(id));
+            listID.add(id);
         }
-        return a;
+        return id;
     }
 
+    //lấy ra đáp án A,B,C,D để hiển thị theo câu hỏi có id tương ứng
     public String getDA(int id, int i) {
         String da = "";
         switch (i) {
@@ -55,63 +55,52 @@ public class PlayGameService {
         return da;
     }
 
+//kiểm tra phương án chọn đúng hay sai
     public boolean ktKQ(int id, String kq) {
-        if (ch.getCH(id).getKetQua().equals(kq)) {
-            return true;
-        } else {
-            return false;
-        }
+        return ch.getCH(id).getKetQua().equals(kq);
     }
 
-    public class Timing extends Thread {
-
-        JLabel lbltime;
-        JFrame play;
-        JFrame over;
-        private int i = 61;
-        private int j = 0;
-
-        public void setI(int i) {
-            this.i = i;
+//tính thời gian
+    public String displayTime(int time) {
+        int minute = time / 60;
+        int Second = time - minute * 60;
+        String display = minute + ":" + Second;
+        if (Second < 10) {
+            display = minute + ":0" + Second;
         }
-
-        public void setJ(int j) {
-            this.j = j;
+        return display;
+    }
+   //trợ giúp 5050
+    public  void sp5050(){
+       int i = 0;
+        String kq = ch.getCH(idCH).getKetQua();
+        if (!btnA.getText().equals(kq)) {
+            btnA.setText("");
+            i++;
         }
-
-        public Timing(JLabel lbltime, JFrame play, JFrame over) {
-            this.lbltime = lbltime;
-            this.play = play;
-            this.over = over;
+        if (!btnC.getText().equals(kq) && i < 2) {
+            btnC.setText("");
+            i++;
         }
-
-        public void run() {
-            while (i > 0) {
-                i--;
-                int minute = i / 60;
-                int Second = i - minute * 60;
-                String time = minute + ":" + Second;
-                if (Second < 10) {
-                    time = minute + ":0" + Second;
-                }
-                lbltime.setText(time);
-                if (lbltime.getText().equals("0:00")) {
-                    JOptionPane.showMessageDialog(null, "Game over!");
-                    over.setVisible(true);
-                    play.dispose();
-                }
-                try {
-                    j++;
-                    Thread.sleep(1000);
-                } catch (InterruptedException ex) {
-
-                }
-            }
+        if (!btnB.getText().equals(kq) && i < 2) {
+            btnB.setText("");
+            i++;
         }
-
-        public void reSet() {
-            this.setI(61);
-            this.setJ(0);
+        if (!btnD.getText().equals(kq) && i < 2) {
+            btnD.setText("");
+            i++;
         }
+}
+//tinh điểm
+    public String score(int stt){
+        int diem=0;
+        if(stt<=5){
+            diem=stt*5;
+        }else if(stt>5 && stt<=10){
+            diem=(stt-5)*10+25;
+        }else{
+            diem=(stt-10)*15+75;
+        }
+        return "Bạn ghi được "+diem+" điểm!";
     }
 }
