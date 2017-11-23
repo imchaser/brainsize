@@ -72,24 +72,7 @@ public class PlayGameService {
     }
    //trợ giúp 5050
     public  void sp5050(){
-       int i = 0;
-        String kq = ch.getCH(idCH).getKetQua();
-        if (!btnA.getText().equals(kq)) {
-            btnA.setText("");
-            i++;
-        }
-        if (!btnC.getText().equals(kq) && i < 2) {
-            btnC.setText("");
-            i++;
-        }
-        if (!btnB.getText().equals(kq) && i < 2) {
-            btnB.setText("");
-            i++;
-        }
-        if (!btnD.getText().equals(kq) && i < 2) {
-            btnD.setText("");
-            i++;
-        }
+      
 }
 //tinh điểm
     public String score(int stt){

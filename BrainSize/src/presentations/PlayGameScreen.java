@@ -1,12 +1,7 @@
 package presentations;
-
-<<<<<<< HEAD
-import DAOs.CAUHOIdao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-=======
 import DAOs.CauHoiDAO;
->>>>>>> 066f1d467eb93011b9b99efb2ae73d3783c15dcc
 import java.util.Random;
 import java.util.Vector;
 import javax.swing.JButton;
@@ -19,18 +14,12 @@ import services.PlayGameService;
 public class PlayGameScreen extends javax.swing.JFrame {
 
     private PlayGameService gameservice = new PlayGameService();
-<<<<<<< HEAD
     private int stt = 1; //số thứ tự của câu hỏi
     private Vector listIDCH = new Vector(); //danh sách ID câu hỏi
     private int idCH = 0; //id câu hỏi
-    CAUHOIdao ch = new CAUHOIdao();
-=======
-    private int stt = 1;
+    CauHoiDAO ch = new CauHoiDAO();
     private Vector v = new Vector();
     private int id = 0;
-    CauHoiDAO ch = new CauHoiDAO();
-    private PlayGameService.Timing t = null;
->>>>>>> 066f1d467eb93011b9b99efb2ae73d3783c15dcc
     private RankScreen rank = new RankScreen();
     private int time = 60; //thời gian đếm ngược (giây)
     private Timer t = new Timer(1000, countTime());
