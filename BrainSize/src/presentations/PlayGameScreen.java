@@ -42,7 +42,15 @@ public class PlayGameScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton3 = new javax.swing.JButton();
-        pnPlayGame = new javax.swing.JPanel();
+        pnPlayGame = new javax.swing.JPanel(){
+            ImageIcon icon = new ImageIcon("images/background.jpg");
+            public void paintComponent(Graphics g){
+                Dimension d = getSize();
+                g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
+                setOpaque(false);
+                super.paintComponent(g);
+            }
+        };
         lblCountTime = new javax.swing.JLabel();
         lblScore = new javax.swing.JLabel();
         btnBattieng = new javax.swing.JButton();
@@ -79,11 +87,14 @@ public class PlayGameScreen extends javax.swing.JFrame {
         pnPlayGame.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblCountTime.setFont(new java.awt.Font("Maiandra GD", 1, 48)); // NOI18N
+        lblCountTime.setForeground(new java.awt.Color(255, 255, 255));
         lblCountTime.setText("1:00");
-        pnPlayGame.add(lblCountTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 126, -1, -1));
+        pnPlayGame.add(lblCountTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
+        lblScore.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblScore.setForeground(new java.awt.Color(255, 255, 255));
         lblScore.setText("Điểm");
-        pnPlayGame.add(lblScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(551, 142, -1, -1));
+        pnPlayGame.add(lblScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, -1));
 
         btnBattieng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/on.png"))); // NOI18N
         btnBattieng.setPreferredSize(new java.awt.Dimension(30, 30));
@@ -98,28 +109,28 @@ public class PlayGameScreen extends javax.swing.JFrame {
                 btnBActionPerformed(evt);
             }
         });
-        pnPlayGame.add(btnB, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 434, 255, 32));
+        pnPlayGame.add(btnB, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 440, 255, 32));
 
         btnC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCActionPerformed(evt);
             }
         });
-        pnPlayGame.add(btnC, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 484, 255, 33));
+        pnPlayGame.add(btnC, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 255, 33));
 
         btnD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDActionPerformed(evt);
             }
         });
-        pnPlayGame.add(btnD, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 484, 255, 32));
+        pnPlayGame.add(btnD, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 490, 255, 32));
 
         btnA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAActionPerformed(evt);
             }
         });
-        pnPlayGame.add(btnA, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 434, 255, 32));
+        pnPlayGame.add(btnA, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 255, 32));
 
         btnDoiCH.setText("Đổi");
         btnDoiCH.setPreferredSize(new java.awt.Dimension(60, 23));
@@ -146,7 +157,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
         taCauHoi.setRows(3);
         jScrollPane1.setViewportView(taCauHoi);
 
-        pnPlayGame.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 356, 553, -1));
+        pnPlayGame.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 560, -1));
 
         logo.setPreferredSize(new java.awt.Dimension(160, 160));
 

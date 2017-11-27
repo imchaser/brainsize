@@ -25,7 +25,7 @@ public class StartGame extends javax.swing.JFrame {
     private void initComponents() {
 
         pnStartGame = new javax.swing.JPanel(){
-            ImageIcon icon = new ImageIcon("images/background.png");
+            ImageIcon icon = new ImageIcon("images/background.jpg");
             public void paintComponent(Graphics g){
                 Dimension d = getSize();
                 g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
