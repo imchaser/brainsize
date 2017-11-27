@@ -54,7 +54,7 @@ public class StartGame extends javax.swing.JFrame {
 
         pnStartGame.setMaximumSize(new java.awt.Dimension(600, 600));
         pnStartGame.setMinimumSize(new java.awt.Dimension(600, 600));
-        pnStartGame.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnStartGame.setPreferredSize(new java.awt.Dimension(600, 600));
 
         btnPlayGame.setText("CHƠI GAME");
         btnPlayGame.addActionListener(new java.awt.event.ActionListener() {
@@ -62,7 +62,6 @@ public class StartGame extends javax.swing.JFrame {
                 btnPlayGameActionPerformed(evt);
             }
         });
-        pnStartGame.add(btnPlayGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 265, 230, -1));
 
         btnRank.setText("BẢNG ĐIỂM");
         btnRank.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +69,6 @@ public class StartGame extends javax.swing.JFrame {
                 btnRankActionPerformed(evt);
             }
         });
-        pnStartGame.add(btnRank, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 328, 230, -1));
 
         btnHelp.setText("HƯỚNG DẪN");
         btnHelp.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +76,6 @@ public class StartGame extends javax.swing.JFrame {
                 btnHelpActionPerformed(evt);
             }
         });
-        pnStartGame.add(btnHelp, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 386, 230, -1));
 
         btnQuit.setText("THOÁT");
         btnQuit.addActionListener(new java.awt.event.ActionListener() {
@@ -86,7 +83,6 @@ public class StartGame extends javax.swing.JFrame {
                 btnQuitActionPerformed(evt);
             }
         });
-        pnStartGame.add(btnQuit, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 445, 230, -1));
 
         logo.setPreferredSize(new java.awt.Dimension(160, 180));
 
@@ -101,17 +97,50 @@ public class StartGame extends javax.swing.JFrame {
             .addGap(0, 180, Short.MAX_VALUE)
         );
 
-        pnStartGame.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 47, -1, -1));
+        javax.swing.GroupLayout pnStartGameLayout = new javax.swing.GroupLayout(pnStartGame);
+        pnStartGame.setLayout(pnStartGameLayout);
+        pnStartGameLayout.setHorizontalGroup(
+            pnStartGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnStartGameLayout.createSequentialGroup()
+                .addGap(209, 209, 209)
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnStartGameLayout.createSequentialGroup()
+                .addGap(172, 172, 172)
+                .addComponent(btnPlayGame, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnStartGameLayout.createSequentialGroup()
+                .addGap(172, 172, 172)
+                .addComponent(btnRank, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnStartGameLayout.createSequentialGroup()
+                .addGap(172, 172, 172)
+                .addComponent(btnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnStartGameLayout.createSequentialGroup()
+                .addGap(172, 172, 172)
+                .addComponent(btnQuit, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        pnStartGameLayout.setVerticalGroup(
+            pnStartGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnStartGameLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(btnPlayGame)
+                .addGap(40, 40, 40)
+                .addComponent(btnRank)
+                .addGap(35, 35, 35)
+                .addComponent(btnHelp)
+                .addGap(36, 36, 36)
+                .addComponent(btnQuit))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnStartGame, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnStartGame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnStartGame, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnStartGame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

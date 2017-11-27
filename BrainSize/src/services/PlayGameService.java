@@ -75,17 +75,24 @@ public class PlayGameService {
     }
    //trợ giúp 5050
     public  void sp5050(){
-      
-}
+        
+    }
 //tinh điểm
-    public int score(int stt){
+    public int score(int stt, boolean nn, boolean dch){
         int diem=0;
-        if(stt<=5){
-            diem=stt*5;
-        }else if(stt>5 && stt<=10){
-            diem=(stt-5)*10+25;
+        int x = stt-1;
+        if(x<=5){
+            diem=x*5;
+        }else if(x>5 && x<=10){
+            diem=(x-5)*10+25;
         }else{
-            diem=(stt-10)*15+75;
+            diem=(x-10)*15+75;
+        }
+        if(nn){
+            diem = diem - 10;
+        }
+        if(dch){
+            diem = diem - 5;
         }
         return diem;
     }

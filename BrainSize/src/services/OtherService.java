@@ -9,11 +9,11 @@ public class OtherService {
     private BangDiemDAO bd = new BangDiemDAO();
 
     public String rank(int top) {
-        return bd.getRank(top).getTen() + " - " + bd.getRank(top).getDiem();
+        return bd.getRank(top).getTen() + " - " + bd.getRank(top).getDiem() + " điểm.";
     }
 
     public String helpText(String filename){
-        String help = null;
+        String help = "";
         try {
             FileReader fr = new FileReader(filename);
             BufferedReader br = new BufferedReader(fr);
@@ -22,7 +22,7 @@ public class OtherService {
                 if(line == null){
                     break;
                 } else{
-                    help = line;
+                    help += line + "\n";
                 }
             }
             br.close();

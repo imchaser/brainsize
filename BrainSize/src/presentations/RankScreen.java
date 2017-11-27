@@ -40,17 +40,10 @@ public class RankScreen extends javax.swing.JFrame {
 
         pnRank.setMaximumSize(new java.awt.Dimension(600, 600));
         pnRank.setMinimumSize(new java.awt.Dimension(600, 600));
-        pnRank.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblRank.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblRank.setForeground(new java.awt.Color(153, 0, 0));
         lblRank.setText("BẢNG ĐIỂM");
-        pnRank.add(lblRank, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, -1, -1));
-        pnRank.add(lblTop1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 200, 20));
-        pnRank.add(lblTop2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 200, 20));
-        pnRank.add(lblTop3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 200, 20));
-        pnRank.add(lblTop4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 200, 20));
-        pnRank.add(lblTop5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 200, 20));
 
         btnBackRank.setText("Back");
         btnBackRank.addActionListener(new java.awt.event.ActionListener() {
@@ -58,17 +51,61 @@ public class RankScreen extends javax.swing.JFrame {
                 btnBackRankActionPerformed(evt);
             }
         });
-        pnRank.add(btnBackRank, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, -1, 26));
+
+        javax.swing.GroupLayout pnRankLayout = new javax.swing.GroupLayout(pnRank);
+        pnRank.setLayout(pnRankLayout);
+        pnRankLayout.setHorizontalGroup(
+            pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnRankLayout.createSequentialGroup()
+                .addGap(230, 230, 230)
+                .addComponent(lblRank))
+            .addGroup(pnRankLayout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(lblTop1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnRankLayout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(lblTop2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnRankLayout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(lblTop3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnRankLayout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(lblTop4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnRankLayout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(lblTop5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnRankLayout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(btnBackRank))
+        );
+        pnRankLayout.setVerticalGroup(
+            pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnRankLayout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(lblRank)
+                .addGap(51, 51, 51)
+                .addComponent(lblTop1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(lblTop2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(lblTop3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(lblTop4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(lblTop5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(btnBackRank, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnRank, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnRank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnRank, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnRank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

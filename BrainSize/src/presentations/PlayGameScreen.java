@@ -26,6 +26,9 @@ public class PlayGameScreen extends javax.swing.JFrame {
     private int id = 0;
     private int time = 60; //thời gian đếm ngược (giây)
     private Timer t = new Timer(1000, countTime());
+    
+    private boolean nn = false;
+    private boolean dch = false;
 
     public PlayGameScreen() {
         initComponents();
@@ -84,53 +87,44 @@ public class PlayGameScreen extends javax.swing.JFrame {
         pnPlayGame.setMinimumSize(new java.awt.Dimension(600, 600));
         pnPlayGame.setName(""); // NOI18N
         pnPlayGame.setPreferredSize(new java.awt.Dimension(600, 600));
-        pnPlayGame.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblCountTime.setFont(new java.awt.Font("Maiandra GD", 1, 48)); // NOI18N
         lblCountTime.setForeground(new java.awt.Color(255, 255, 255));
         lblCountTime.setText("1:00");
-        pnPlayGame.add(lblCountTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
-        lblScore.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblScore.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblScore.setForeground(new java.awt.Color(255, 255, 255));
         lblScore.setText("Điểm");
-        pnPlayGame.add(lblScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, -1));
 
         btnBattieng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/on.png"))); // NOI18N
         btnBattieng.setPreferredSize(new java.awt.Dimension(30, 30));
-        pnPlayGame.add(btnBattieng, new org.netbeans.lib.awtextra.AbsoluteConstraints(497, 11, -1, -1));
 
         btnTattieng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/off.png"))); // NOI18N
         btnTattieng.setPreferredSize(new java.awt.Dimension(30, 30));
-        pnPlayGame.add(btnTattieng, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 11, -1, -1));
 
         btnB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBActionPerformed(evt);
             }
         });
-        pnPlayGame.add(btnB, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 440, 255, 32));
 
         btnC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCActionPerformed(evt);
             }
         });
-        pnPlayGame.add(btnC, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 255, 33));
 
         btnD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDActionPerformed(evt);
             }
         });
-        pnPlayGame.add(btnD, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 490, 255, 32));
 
         btnA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAActionPerformed(evt);
             }
         });
-        pnPlayGame.add(btnA, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 255, 32));
 
         btnDoiCH.setText("Đổi");
         btnDoiCH.setPreferredSize(new java.awt.Dimension(60, 23));
@@ -139,7 +133,6 @@ public class PlayGameScreen extends javax.swing.JFrame {
                 btnDoiCHActionPerformed(evt);
             }
         });
-        pnPlayGame.add(btnDoiCH, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 299, 69, 30));
 
         btn5050.setText("50:50");
         btn5050.setPreferredSize(new java.awt.Dimension(60, 30));
@@ -148,16 +141,14 @@ public class PlayGameScreen extends javax.swing.JFrame {
                 btn5050ActionPerformed(evt);
             }
         });
-        pnPlayGame.add(btn5050, new org.netbeans.lib.awtextra.AbsoluteConstraints(419, 299, 69, -1));
-        pnPlayGame.add(lblSTT, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 338, -1, -1));
+
+        lblSTT.setForeground(new java.awt.Color(255, 255, 255));
 
         taCauHoi.setEditable(false);
         taCauHoi.setColumns(20);
         taCauHoi.setLineWrap(true);
         taCauHoi.setRows(3);
         jScrollPane1.setViewportView(taCauHoi);
-
-        pnPlayGame.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 560, -1));
 
         logo.setPreferredSize(new java.awt.Dimension(160, 160));
 
@@ -172,7 +163,84 @@ public class PlayGameScreen extends javax.swing.JFrame {
             .addGap(0, 180, Short.MAX_VALUE)
         );
 
-        pnPlayGame.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 86, -1, 180));
+        javax.swing.GroupLayout pnPlayGameLayout = new javax.swing.GroupLayout(pnPlayGame);
+        pnPlayGame.setLayout(pnPlayGameLayout);
+        pnPlayGameLayout.setHorizontalGroup(
+            pnPlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnPlayGameLayout.createSequentialGroup()
+                .addGroup(pnPlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnPlayGameLayout.createSequentialGroup()
+                        .addGap(419, 419, 419)
+                        .addComponent(btn5050, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(btnDoiCH, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnPlayGameLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(lblSTT))
+                    .addGroup(pnPlayGameLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnPlayGameLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(btnA, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(btnB, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnPlayGameLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(btnC, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(btnD, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnPlayGameLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(lblCountTime, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(73, 73, 73)
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(pnPlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnPlayGameLayout.createSequentialGroup()
+                                .addGap(123, 123, 123)
+                                .addComponent(btnBattieng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(btnTattieng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnPlayGameLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblScore)
+                                .addGap(22, 22, 22)))))
+                .addGap(30, 30, 30))
+        );
+        pnPlayGameLayout.setVerticalGroup(
+            pnPlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnPlayGameLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addGroup(pnPlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnBattieng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTattieng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnPlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnPlayGameLayout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addComponent(lblCountTime))
+                    .addGroup(pnPlayGameLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnPlayGameLayout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addComponent(lblScore)))
+                .addGap(45, 45, 45)
+                .addGroup(pnPlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn5050, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDoiCH, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addComponent(lblSTT)
+                .addGap(12, 12, 12)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(pnPlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnA, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnB, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnPlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnC, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnD, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -189,22 +257,6 @@ public class PlayGameScreen extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAActionPerformed
-        checkAnswer(btnA);
-    }//GEN-LAST:event_btnAActionPerformed
-
-    private void btnBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBActionPerformed
-        checkAnswer(btnB);
-    }//GEN-LAST:event_btnBActionPerformed
-
-    private void btnCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCActionPerformed
-        checkAnswer(btnC);
-    }//GEN-LAST:event_btnCActionPerformed
-
-    private void btnDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDActionPerformed
-        checkAnswer(btnD);
-    }//GEN-LAST:event_btnDActionPerformed
 
     private void btn5050ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5050ActionPerformed
         int i = 0;
@@ -226,13 +278,33 @@ public class PlayGameScreen extends javax.swing.JFrame {
             i++;
         }
         btn5050.setEnabled(false);
+        nn = true;
+        lblScore.setText(gameservice.score(stt, nn, dch)+" Điểm");
     }//GEN-LAST:event_btn5050ActionPerformed
 
     private void btnDoiCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoiCHActionPerformed
         idCH = gameservice.getIDCH(stt, listIDCH);
         setText(idCH);
         btnDoiCH.setEnabled(false);
+        dch = true;
+        lblScore.setText(gameservice.score(stt, nn, dch)+" Điểm");
     }//GEN-LAST:event_btnDoiCHActionPerformed
+
+    private void btnAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAActionPerformed
+        checkAnswer(btnA);
+    }//GEN-LAST:event_btnAActionPerformed
+
+    private void btnDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDActionPerformed
+        checkAnswer(btnD);
+    }//GEN-LAST:event_btnDActionPerformed
+
+    private void btnCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCActionPerformed
+        checkAnswer(btnC);
+    }//GEN-LAST:event_btnCActionPerformed
+
+    private void btnBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBActionPerformed
+        checkAnswer(btnB);
+    }//GEN-LAST:event_btnBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -299,6 +371,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
                 i++;
             }
         }
+        lblScore.setText(gameservice.score(stt, nn, dch)+" Điểm");
         lblSTT.setText("Câu hỏi " + stt + " :");
         taCauHoi.setText(ch.getCH(id).getCauHoi());
         btnA.setText(gameservice.getDA(id, (int) listDA.get(0)));
@@ -314,8 +387,8 @@ public class PlayGameScreen extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Bạn đã trả lời đúng!", "Chúc mừng!", 1);
             if (stt == 15) {
                 JOptionPane.showMessageDialog(null, "Bạn đã chiến thắng trò chơi!", "Chúc mừng!", 1);
-                String name = JOptionPane.showInputDialog(null, "Tên người chơi:", "Bạn ghi được " + gameservice.score(stt) + " điểm!", 1);
-                gameservice.saveScore(name, gameservice.score(stt));
+                String name = JOptionPane.showInputDialog(null, "Tên người chơi:", "Bạn ghi được " + gameservice.score(stt,nn,dch) + " điểm!", 1);
+                gameservice.saveScore(name, gameservice.score(stt,nn,dch));
                 RankScreen rank = new RankScreen();
                 rank.setVisible(true);
             } else {
@@ -326,8 +399,8 @@ public class PlayGameScreen extends javax.swing.JFrame {
             }
         } else {
             JOptionPane.showMessageDialog(null, "Rất tiếc, bạn đã trả lời sai!", "GG!", 2);
-            String name = JOptionPane.showInputDialog(null, "Tên người chơi:", "Bạn ghi được " + gameservice.score(stt) + " điểm!", 1);
-            gameservice.saveScore(name, gameservice.score(stt));
+            String name = JOptionPane.showInputDialog(null, "Tên người chơi:", "Bạn ghi được " + gameservice.score(stt,nn,dch) + " điểm!", 1);
+            gameservice.saveScore(name, gameservice.score(stt,nn,dch));
             RankScreen rank = new RankScreen();
             rank.setVisible(true);
             t.stop();

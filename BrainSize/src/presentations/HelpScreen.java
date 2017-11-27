@@ -34,19 +34,14 @@ public class HelpScreen extends javax.swing.JFrame {
         pnHelp.setMaximumSize(new java.awt.Dimension(600, 600));
         pnHelp.setMinimumSize(new java.awt.Dimension(600, 600));
         pnHelp.setPreferredSize(new java.awt.Dimension(600, 600));
-        pnHelp.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         taHelp.setColumns(20);
-        taHelp.setLineWrap(true);
         taHelp.setRows(5);
         jScrollPane1.setViewportView(taHelp);
-
-        pnHelp.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 154, 409, 294));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 0, 0));
         jLabel1.setText("LUẬT CHƠI :");
-        pnHelp.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 82, -1, -1));
 
         btnBackHelp.setText("Back");
         btnBackHelp.addActionListener(new java.awt.event.ActionListener() {
@@ -54,7 +49,33 @@ public class HelpScreen extends javax.swing.JFrame {
                 btnBackHelpActionPerformed(evt);
             }
         });
-        pnHelp.add(btnBackHelp, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 477, -1, 28));
+
+        javax.swing.GroupLayout pnHelpLayout = new javax.swing.GroupLayout(pnHelp);
+        pnHelp.setLayout(pnHelpLayout);
+        pnHelpLayout.setHorizontalGroup(
+            pnHelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnHelpLayout.createSequentialGroup()
+                .addGroup(pnHelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnHelpLayout.createSequentialGroup()
+                        .addGap(98, 98, 98)
+                        .addGroup(pnHelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(btnBackHelp)))
+                    .addGroup(pnHelpLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        pnHelpLayout.setVerticalGroup(
+            pnHelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnHelpLayout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addComponent(jLabel1)
+                .addGap(43, 43, 43)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(btnBackHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
