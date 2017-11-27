@@ -1,6 +1,8 @@
 package services;
 
+import DAOs.BangDiemDAO;
 import DAOs.CauHoiDAO;
+import Entities.BangDiem;
 import Entities.CauHoi;
 import java.util.ArrayList;
 import java.util.Random;
@@ -10,6 +12,7 @@ public class PlayGameService {
 
     private CauHoiDAO ch = new CauHoiDAO();
     private ArrayList<CauHoi> listCH = null;
+    private BangDiemDAO bd = new BangDiemDAO();
 
     //lấy ra ngẫu nhiên id câu hỏi
     public int getIDCH(int stt, Vector listID) {
@@ -75,7 +78,7 @@ public class PlayGameService {
       
 }
 //tinh điểm
-    public String score(int stt){
+    public int score(int stt){
         int diem=0;
         if(stt<=5){
             diem=stt*5;
@@ -84,6 +87,9 @@ public class PlayGameService {
         }else{
             diem=(stt-10)*15+75;
         }
-        return "Bạn ghi được "+diem+" điểm!";
+        return diem;
+    }
+    public void saveScore(String name,int score){
+        bd.saveScore(new BangDiem( name, score));
     }
 }

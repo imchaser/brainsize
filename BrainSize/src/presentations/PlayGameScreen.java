@@ -1,4 +1,5 @@
 package presentations;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import DAOs.CauHoiDAO;
@@ -20,7 +21,6 @@ public class PlayGameScreen extends javax.swing.JFrame {
     CauHoiDAO ch = new CauHoiDAO();
     private Vector v = new Vector();
     private int id = 0;
-    private RankScreen rank = new RankScreen();
     private int time = 60; //thời gian đếm ngược (giây)
     private Timer t = new Timer(1000, countTime());
 
@@ -258,7 +258,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDActionPerformed
 
     private void btn5050ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5050ActionPerformed
-      int i = 0;
+        int i = 0;
         String kq = ch.getCH(idCH).getKetQua();
         if (!btnA.getText().equals(kq)) {
             btnA.setText("");
@@ -365,6 +365,9 @@ public class PlayGameScreen extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Bạn đã trả lời đúng!", "Chúc mừng!", 1);
             if (stt == 15) {
                 JOptionPane.showMessageDialog(null, "Bạn đã chiến thắng trò chơi!", "Chúc mừng!", 1);
+                String name = JOptionPane.showInputDialog(null, "Tên người chơi:", "Bạn ghi được " + gameservice.score(stt) + " điểm!", 1);
+                gameservice.saveScore(name, gameservice.score(stt));
+                RankScreen rank = new RankScreen();
                 rank.setVisible(true);
             } else {
                 stt++;
@@ -374,7 +377,9 @@ public class PlayGameScreen extends javax.swing.JFrame {
             }
         } else {
             JOptionPane.showMessageDialog(null, "Rất tiếc, bạn đã trả lời sai!", "GG!", 2);
-            JOptionPane.showInputDialog(null, "Tên người chơi:", gameservice.score(stt), 1);
+            String name = JOptionPane.showInputDialog(null, "Tên người chơi:", "Bạn ghi được " + gameservice.score(stt) + " điểm!", 1);
+            gameservice.saveScore(name, gameservice.score(stt));
+            RankScreen rank = new RankScreen();
             rank.setVisible(true);
             t.stop();
             dispose();
@@ -392,6 +397,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Game over!");
                     t.stop();
                     dispose();
+                    RankScreen rank = new RankScreen();
                     rank.setVisible(true);
                 }
             }

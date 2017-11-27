@@ -22,5 +22,17 @@ public class BangDiemDAO {
         }
         return bd;
     }
-    
+    public void saveScore(BangDiem bd){
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction tr = null;
+        try {
+            tr=session.beginTransaction();
+            session.save(bd);
+            tr.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally{
+            session.close();
+        }
+    }
 }

@@ -1,11 +1,13 @@
 package Entities;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "BangDiem")
-public class BangDiem {
+public class BangDiem implements Serializable {
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "IDBD")
     private int IDBD;
@@ -17,8 +19,7 @@ public class BangDiem {
     public BangDiem() {
     }
 
-    public BangDiem(int IDBD, String Ten, int Diem) {
-        this.IDBD = IDBD;
+    public BangDiem( String Ten, int Diem) {
         this.Ten = Ten;
         this.Diem = Diem;
     }
