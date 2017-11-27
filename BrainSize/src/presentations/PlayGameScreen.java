@@ -96,11 +96,11 @@ public class PlayGameScreen extends javax.swing.JFrame {
         lblScore.setText("Điểm");
         pnPlayGame.add(lblScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, -1));
 
-        btnBattieng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/on.png"))); // NOI18N
+        btnBattieng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/on.png"))); // NOI18N
         btnBattieng.setPreferredSize(new java.awt.Dimension(30, 30));
         pnPlayGame.add(btnBattieng, new org.netbeans.lib.awtextra.AbsoluteConstraints(497, 11, -1, -1));
 
-        btnTattieng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Mute_Icon.svg.png"))); // NOI18N
+        btnTattieng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/off.png"))); // NOI18N
         btnTattieng.setPreferredSize(new java.awt.Dimension(30, 30));
         pnPlayGame.add(btnTattieng, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 11, -1, -1));
 
