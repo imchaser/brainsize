@@ -26,21 +26,32 @@ public class RankScreen extends javax.swing.JFrame {
 
         pnRank = new javax.swing.JPanel();
         lblRank = new javax.swing.JLabel();
-        btnBackRank = new javax.swing.JButton();
         lblTop1 = new javax.swing.JLabel();
         lblTop2 = new javax.swing.JLabel();
         lblTop3 = new javax.swing.JLabel();
         lblTop4 = new javax.swing.JLabel();
         lblTop5 = new javax.swing.JLabel();
+        btnBackRank = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(600, 600));
         setMinimumSize(new java.awt.Dimension(600, 600));
         setSize(new java.awt.Dimension(600, 600));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnRank.setMaximumSize(new java.awt.Dimension(600, 600));
+        pnRank.setMinimumSize(new java.awt.Dimension(600, 600));
+        pnRank.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblRank.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblRank.setForeground(new java.awt.Color(153, 0, 0));
         lblRank.setText("BẢNG ĐIỂM");
+        pnRank.add(lblRank, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, -1, -1));
+        pnRank.add(lblTop1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 200, 20));
+        pnRank.add(lblTop2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 200, 20));
+        pnRank.add(lblTop3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 200, 20));
+        pnRank.add(lblTop4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 200, 20));
+        pnRank.add(lblTop5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 200, 20));
 
         btnBackRank.setText("Back");
         btnBackRank.addActionListener(new java.awt.event.ActionListener() {
@@ -48,57 +59,9 @@ public class RankScreen extends javax.swing.JFrame {
                 btnBackRankActionPerformed(evt);
             }
         });
+        pnRank.add(btnBackRank, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, -1, 26));
 
-        javax.swing.GroupLayout pnRankLayout = new javax.swing.GroupLayout(pnRank);
-        pnRank.setLayout(pnRankLayout);
-        pnRankLayout.setHorizontalGroup(
-            pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnRankLayout.createSequentialGroup()
-                .addGroup(pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnRankLayout.createSequentialGroup()
-                        .addGap(204, 204, 204)
-                        .addComponent(lblRank))
-                    .addGroup(pnRankLayout.createSequentialGroup()
-                        .addGap(169, 169, 169)
-                        .addGroup(pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnBackRank)
-                            .addComponent(lblTop1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(lblTop2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblTop3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblTop4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblTop5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(0, 231, Short.MAX_VALUE))
-        );
-        pnRankLayout.setVerticalGroup(
-            pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnRankLayout.createSequentialGroup()
-                .addContainerGap(162, Short.MAX_VALUE)
-                .addComponent(lblRank)
-                .addGap(43, 43, 43)
-                .addComponent(lblTop1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(lblTop2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(lblTop3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(lblTop4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(lblTop5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(btnBackRank, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnRank, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnRank, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(pnRank, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

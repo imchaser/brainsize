@@ -42,7 +42,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton3 = new javax.swing.JButton();
-        pnBackground = new javax.swing.JPanel();
+        pnPlayGame = new javax.swing.JPanel();
         lblCountTime = new javax.swing.JLabel();
         lblScore = new javax.swing.JLabel();
         btnBattieng = new javax.swing.JButton();
@@ -69,47 +69,58 @@ public class PlayGameScreen extends javax.swing.JFrame {
         jButton3.setText("jButton3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(600, 600));
         setPreferredSize(new java.awt.Dimension(600, 600));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnBackground.setMaximumSize(new java.awt.Dimension(600, 600));
-        pnBackground.setMinimumSize(new java.awt.Dimension(600, 600));
-        pnBackground.setName(""); // NOI18N
-        pnBackground.setPreferredSize(new java.awt.Dimension(600, 600));
+        pnPlayGame.setMaximumSize(new java.awt.Dimension(600, 600));
+        pnPlayGame.setMinimumSize(new java.awt.Dimension(600, 600));
+        pnPlayGame.setName(""); // NOI18N
+        pnPlayGame.setPreferredSize(new java.awt.Dimension(600, 600));
+        pnPlayGame.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblCountTime.setFont(new java.awt.Font("Maiandra GD", 1, 48)); // NOI18N
         lblCountTime.setText("1:00");
+        pnPlayGame.add(lblCountTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 126, -1, -1));
 
         lblScore.setText("Điểm");
+        pnPlayGame.add(lblScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(551, 142, -1, -1));
 
         btnBattieng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/on.png"))); // NOI18N
         btnBattieng.setPreferredSize(new java.awt.Dimension(30, 30));
+        pnPlayGame.add(btnBattieng, new org.netbeans.lib.awtextra.AbsoluteConstraints(497, 11, -1, -1));
 
         btnTattieng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Mute_Icon.svg.png"))); // NOI18N
         btnTattieng.setPreferredSize(new java.awt.Dimension(30, 30));
+        pnPlayGame.add(btnTattieng, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 11, -1, -1));
 
         btnB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBActionPerformed(evt);
             }
         });
+        pnPlayGame.add(btnB, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 434, 255, 32));
 
         btnC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCActionPerformed(evt);
             }
         });
+        pnPlayGame.add(btnC, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 484, 255, 33));
 
         btnD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDActionPerformed(evt);
             }
         });
+        pnPlayGame.add(btnD, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 484, 255, 32));
 
         btnA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAActionPerformed(evt);
             }
         });
+        pnPlayGame.add(btnA, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 434, 255, 32));
 
         btnDoiCH.setText("Đổi");
         btnDoiCH.setPreferredSize(new java.awt.Dimension(60, 23));
@@ -118,6 +129,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
                 btnDoiCHActionPerformed(evt);
             }
         });
+        pnPlayGame.add(btnDoiCH, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 299, 69, 30));
 
         btn5050.setText("50:50");
         btn5050.setPreferredSize(new java.awt.Dimension(60, 30));
@@ -126,12 +138,16 @@ public class PlayGameScreen extends javax.swing.JFrame {
                 btn5050ActionPerformed(evt);
             }
         });
+        pnPlayGame.add(btn5050, new org.netbeans.lib.awtextra.AbsoluteConstraints(419, 299, 69, -1));
+        pnPlayGame.add(lblSTT, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 338, -1, -1));
 
         taCauHoi.setEditable(false);
         taCauHoi.setColumns(20);
         taCauHoi.setLineWrap(true);
         taCauHoi.setRows(3);
         jScrollPane1.setViewportView(taCauHoi);
+
+        pnPlayGame.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 356, 553, -1));
 
         logo.setPreferredSize(new java.awt.Dimension(160, 160));
 
@@ -146,107 +162,9 @@ public class PlayGameScreen extends javax.swing.JFrame {
             .addGap(0, 180, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout pnBackgroundLayout = new javax.swing.GroupLayout(pnBackground);
-        pnBackground.setLayout(pnBackgroundLayout);
-        pnBackgroundLayout.setHorizontalGroup(
-            pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnBackgroundLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnBackgroundLayout.createSequentialGroup()
-                        .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnA, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnC, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnD, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnB, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnBackgroundLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnBackgroundLayout.createSequentialGroup()
-                                .addComponent(lblSTT)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnBackgroundLayout.createSequentialGroup()
-                                .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(pnBackgroundLayout.createSequentialGroup()
-                                        .addGap(0, 467, Short.MAX_VALUE)
-                                        .addComponent(btnBattieng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnTattieng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(pnBackgroundLayout.createSequentialGroup()
-                                        .addGap(389, 389, 389)
-                                        .addComponent(btn5050, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE)))
-                                .addGap(12, 12, 12))
-                            .addGroup(pnBackgroundLayout.createSequentialGroup()
-                                .addComponent(lblCountTime)
-                                .addGap(94, 94, 94)
-                                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblScore))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnBackgroundLayout.createSequentialGroup()
-                        .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnDoiCH, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(25, 25, 25))
-        );
-        pnBackgroundLayout.setVerticalGroup(
-            pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnBackgroundLayout.createSequentialGroup()
-                .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnBackgroundLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnBattieng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnTattieng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnBackgroundLayout.createSequentialGroup()
-                                .addGap(101, 101, 101)
-                                .addComponent(lblScore))
-                            .addGroup(pnBackgroundLayout.createSequentialGroup()
-                                .addGap(85, 85, 85)
-                                .addComponent(lblCountTime)))
-                        .addGap(132, 153, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnBackgroundLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn5050, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnDoiCH, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(9, 9, 9)))
-                .addComponent(lblSTT)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(pnBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnBackgroundLayout.createSequentialGroup()
-                        .addComponent(btnA, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnC, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnBackgroundLayout.createSequentialGroup()
-                        .addComponent(btnB, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnD, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(83, 83, 83))
-        );
+        pnPlayGame.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 86, -1, 180));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pnBackground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(pnBackground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        getContentPane().add(pnPlayGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getAccessibleContext().setAccessibleDescription("");
 
@@ -348,7 +266,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
     private javax.swing.JLabel lblSTT;
     private javax.swing.JLabel lblScore;
     private javax.swing.JPanel logo;
-    private javax.swing.JPanel pnBackground;
+    private javax.swing.JPanel pnPlayGame;
     private javax.swing.JTextArea taCauHoi;
     // End of variables declaration//GEN-END:variables
     private void setText(int id) {
