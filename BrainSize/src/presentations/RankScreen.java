@@ -9,17 +9,11 @@ public class RankScreen extends javax.swing.JFrame {
     public RankScreen() {
         initComponents();
         
-        txtTop1.setText(otherService.rank(1));
-        txtTop2.setText(otherService.rank(2));
-        txtTop3.setText(otherService.rank(3));
-        txtTop4.setText(otherService.rank(4));
-        txtTop5.setText(otherService.rank(5));
-        
-        txtTop1.setEditable(false);
-        txtTop2.setEditable(false);
-        txtTop3.setEditable(false);
-        txtTop4.setEditable(false);
-        txtTop5.setEditable(false);
+        lblTop1.setText(otherService.rank(1));
+        lblTop2.setText(otherService.rank(2));
+        lblTop3.setText(otherService.rank(3));
+        lblTop4.setText(otherService.rank(4));
+        lblTop5.setText(otherService.rank(5));
         
         setSize(600, 600);
         setLocationRelativeTo(null);
@@ -32,12 +26,12 @@ public class RankScreen extends javax.swing.JFrame {
 
         pnRank = new javax.swing.JPanel();
         lblRank = new javax.swing.JLabel();
-        txtTop1 = new javax.swing.JTextField();
-        txtTop2 = new javax.swing.JTextField();
-        txtTop3 = new javax.swing.JTextField();
-        txtTop4 = new javax.swing.JTextField();
-        txtTop5 = new javax.swing.JTextField();
         btnBackRank = new javax.swing.JButton();
+        lblTop1 = new javax.swing.JLabel();
+        lblTop2 = new javax.swing.JLabel();
+        lblTop3 = new javax.swing.JLabel();
+        lblTop4 = new javax.swing.JLabel();
+        lblTop5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(600, 600));
@@ -47,12 +41,6 @@ public class RankScreen extends javax.swing.JFrame {
         lblRank.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblRank.setForeground(new java.awt.Color(153, 0, 0));
         lblRank.setText("BẢNG ĐIỂM");
-
-        txtTop4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTop4ActionPerformed(evt);
-            }
-        });
 
         btnBackRank.setText("Back");
         btnBackRank.addActionListener(new java.awt.event.ActionListener() {
@@ -66,40 +54,37 @@ public class RankScreen extends javax.swing.JFrame {
         pnRankLayout.setHorizontalGroup(
             pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnRankLayout.createSequentialGroup()
-                .addGap(169, 169, 169)
                 .addGroup(pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnRankLayout.createSequentialGroup()
-                        .addComponent(txtTop2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(135, 221, Short.MAX_VALUE))
+                        .addGap(204, 204, 204)
+                        .addComponent(lblRank))
                     .addGroup(pnRankLayout.createSequentialGroup()
-                        .addGroup(pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTop1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTop3, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTop5, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTop4, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBackRank))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(pnRankLayout.createSequentialGroup()
-                .addGap(204, 204, 204)
-                .addComponent(lblRank)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(169, 169, 169)
+                        .addGroup(pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnBackRank)
+                            .addComponent(lblTop1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(lblTop2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblTop3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblTop4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblTop5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(0, 231, Short.MAX_VALUE))
         );
         pnRankLayout.setVerticalGroup(
             pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnRankLayout.createSequentialGroup()
                 .addContainerGap(162, Short.MAX_VALUE)
                 .addComponent(lblRank)
-                .addGap(46, 46, 46)
-                .addComponent(txtTop1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(lblTop1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
-                .addComponent(txtTop2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTop2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
-                .addComponent(txtTop3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTop3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
-                .addComponent(txtTop4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTop4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
-                .addComponent(txtTop5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addComponent(lblTop5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addComponent(btnBackRank, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58))
         );
@@ -124,10 +109,6 @@ public class RankScreen extends javax.swing.JFrame {
         st.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnBackRankActionPerformed
-
-    private void txtTop4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTop4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTop4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,11 +149,11 @@ public class RankScreen extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBackRank;
     private javax.swing.JLabel lblRank;
+    private javax.swing.JLabel lblTop1;
+    private javax.swing.JLabel lblTop2;
+    private javax.swing.JLabel lblTop3;
+    private javax.swing.JLabel lblTop4;
+    private javax.swing.JLabel lblTop5;
     private javax.swing.JPanel pnRank;
-    private javax.swing.JTextField txtTop1;
-    private javax.swing.JTextField txtTop2;
-    private javax.swing.JTextField txtTop3;
-    private javax.swing.JTextField txtTop4;
-    private javax.swing.JTextField txtTop5;
     // End of variables declaration//GEN-END:variables
 }

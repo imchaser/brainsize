@@ -9,6 +9,7 @@ public class HelpScreen extends javax.swing.JFrame {
         initComponents();
         
         taHelp.setText(otherService.helpText("huongdan.txt"));
+        taHelp.setEditable(false);
         
         setSize(600, 600);
         setLocationRelativeTo(null);
@@ -38,7 +39,6 @@ public class HelpScreen extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(153, 0, 0));
         jLabel1.setText("CÁCH CHƠI :");
 
-        btnBackHelp.setBackground(new java.awt.Color(0, 102, 102));
         btnBackHelp.setText("Back");
         btnBackHelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
