@@ -51,7 +51,6 @@ public class StartGame extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(600, 600));
         setMinimumSize(new java.awt.Dimension(600, 600));
         setSize(new java.awt.Dimension(600, 600));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnStartGame.setMaximumSize(new java.awt.Dimension(600, 600));
         pnStartGame.setMinimumSize(new java.awt.Dimension(600, 600));
@@ -104,7 +103,16 @@ public class StartGame extends javax.swing.JFrame {
 
         pnStartGame.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 47, -1, -1));
 
-        getContentPane().add(pnStartGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 600));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnStartGame, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnStartGame, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

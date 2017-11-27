@@ -30,7 +30,6 @@ public class HelpScreen extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(600, 600));
         setMinimumSize(new java.awt.Dimension(600, 600));
         setSize(new java.awt.Dimension(600, 600));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnHelp.setMaximumSize(new java.awt.Dimension(600, 600));
         pnHelp.setMinimumSize(new java.awt.Dimension(600, 600));
@@ -57,7 +56,16 @@ public class HelpScreen extends javax.swing.JFrame {
         });
         pnHelp.add(btnBackHelp, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 477, -1, 28));
 
-        getContentPane().add(pnHelp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

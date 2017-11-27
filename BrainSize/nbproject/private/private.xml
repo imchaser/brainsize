@@ -12,12 +12,10 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Duong/Documents/GITHUB/brainsize/BrainSize/src/presentations/RankScreen.java</file>
-            <file>file:/C:/Users/Duong/Documents/GITHUB/brainsize/BrainSize/src/services/PlayGameService.java</file>
-            <file>file:/C:/Users/Duong/Documents/GITHUB/brainsize/BrainSize/src/DAOs/BANGDIEMdao.java</file>
-            <file>file:/C:/Users/Duong/Documents/GITHUB/brainsize/BrainSize/src/Test.java</file>
-            <file>file:/C:/Users/Duong/Documents/GITHUB/brainsize/BrainSize/src/presentations/HelpScreen.java</file>
-            <file>file:/C:/Users/Duong/Documents/GITHUB/brainsize/BrainSize/src/presentations/PlayGameScreen.java</file>
+            <file>file:/C:/Users/ImChaser/Documents/GitHub/brainsize/BrainSize/src/presentations/StartGame.java</file>
+            <file>file:/C:/Users/ImChaser/Documents/GitHub/brainsize/BrainSize/src/presentations/HelpScreen.java</file>
+            <file>file:/C:/Users/ImChaser/Documents/GitHub/brainsize/BrainSize/src/presentations/PlayGameScreen.java</file>
+            <file>file:/C:/Users/ImChaser/Documents/GitHub/brainsize/BrainSize/src/presentations/RankScreen.java</file>
         </group>
     </open-files>
 </project-private>

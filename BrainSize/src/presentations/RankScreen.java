@@ -37,7 +37,6 @@ public class RankScreen extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(600, 600));
         setMinimumSize(new java.awt.Dimension(600, 600));
         setSize(new java.awt.Dimension(600, 600));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnRank.setMaximumSize(new java.awt.Dimension(600, 600));
         pnRank.setMinimumSize(new java.awt.Dimension(600, 600));
@@ -61,7 +60,16 @@ public class RankScreen extends javax.swing.JFrame {
         });
         pnRank.add(btnBackRank, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, -1, 26));
 
-        getContentPane().add(pnRank, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 600));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnRank, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnRank, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
