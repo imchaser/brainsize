@@ -24,7 +24,15 @@ public class StartGame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnPlayGame = new javax.swing.JPanel();
+        pnPlayGame = new javax.swing.JPanel(){
+            ImageIcon icon = new ImageIcon("images/background.png");
+            public void paintComponent(Graphics g){
+                Dimension d = getSize();
+                g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
+                setOpaque(false);
+                super.paintComponent(g);
+            }
+        };
         btnPlayGame = new javax.swing.JButton();
         btnRank = new javax.swing.JButton();
         btnHelp = new javax.swing.JButton();
