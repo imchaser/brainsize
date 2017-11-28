@@ -29,7 +29,7 @@ public class PlayGameService {
         min = listCH.get(0).getIDCH();
         if (!listID.contains(id)) {
             do {
-                id = rd.ints(min, listCH.size() + 1).limit(1).findFirst().getAsInt();
+                id = rd.ints(min, listCH.get(listCH.size()-1).getIDCH() + 1).limit(1).findFirst().getAsInt();
             } while (listID.contains(id));
             listID.add(id);
         }

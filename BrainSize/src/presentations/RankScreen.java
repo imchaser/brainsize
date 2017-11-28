@@ -1,5 +1,8 @@
 package presentations;
 
+import java.awt.Dimension;
+import java.awt.Graphics;
+import javax.swing.ImageIcon;
 import services.OtherService;
 
 public class RankScreen extends javax.swing.JFrame {
@@ -24,7 +27,15 @@ public class RankScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnRank = new javax.swing.JPanel();
+        pnRank = new javax.swing.JPanel(){
+            ImageIcon icon = new ImageIcon("images/background.jpg");
+            public void paintComponent(Graphics g){
+                Dimension d = getSize();
+                g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
+                setOpaque(false);
+                super.paintComponent(g);
+            }
+        };
         lblRank = new javax.swing.JLabel();
         lblTop1 = new javax.swing.JLabel();
         lblTop2 = new javax.swing.JLabel();
@@ -36,14 +47,31 @@ public class RankScreen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(600, 600));
         setMinimumSize(new java.awt.Dimension(600, 600));
+        setPreferredSize(new java.awt.Dimension(600, 600));
         setSize(new java.awt.Dimension(600, 600));
 
         pnRank.setMaximumSize(new java.awt.Dimension(600, 600));
         pnRank.setMinimumSize(new java.awt.Dimension(600, 600));
 
-        lblRank.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        lblRank.setForeground(new java.awt.Color(153, 0, 0));
+        lblRank.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblRank.setForeground(new java.awt.Color(255, 153, 51));
+        lblRank.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblRank.setText("BẢNG ĐIỂM");
+
+        lblTop1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblTop1.setForeground(new java.awt.Color(255, 255, 255));
+
+        lblTop2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblTop2.setForeground(new java.awt.Color(255, 255, 255));
+
+        lblTop3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblTop3.setForeground(new java.awt.Color(255, 255, 255));
+
+        lblTop4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblTop4.setForeground(new java.awt.Color(255, 255, 255));
+
+        lblTop5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblTop5.setForeground(new java.awt.Color(255, 255, 255));
 
         btnBackRank.setText("Back");
         btnBackRank.addActionListener(new java.awt.event.ActionListener() {
@@ -56,56 +84,51 @@ public class RankScreen extends javax.swing.JFrame {
         pnRank.setLayout(pnRankLayout);
         pnRankLayout.setHorizontalGroup(
             pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblRank, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnRankLayout.createSequentialGroup()
-                .addGap(230, 230, 230)
-                .addComponent(lblRank))
-            .addGroup(pnRankLayout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(lblTop1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pnRankLayout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(lblTop2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pnRankLayout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(lblTop3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pnRankLayout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(lblTop4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pnRankLayout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(lblTop5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pnRankLayout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(btnBackRank))
+                .addGroup(pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnRankLayout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addComponent(btnBackRank))
+                    .addGroup(pnRankLayout.createSequentialGroup()
+                        .addGap(200, 200, 200)
+                        .addGroup(pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTop1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTop2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTop3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTop4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTop5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(200, Short.MAX_VALUE))
         );
         pnRankLayout.setVerticalGroup(
             pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnRankLayout.createSequentialGroup()
-                .addGap(100, 100, 100)
+                .addGap(85, 85, 85)
                 .addComponent(lblRank)
-                .addGap(51, 51, 51)
+                .addGap(41, 41, 41)
                 .addComponent(lblTop1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(32, 32, 32)
                 .addComponent(lblTop2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(38, 38, 38)
                 .addComponent(lblTop3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addComponent(lblTop4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addComponent(lblTop5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(btnBackRank, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55)
+                .addComponent(btnBackRank, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnRank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnRank, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnRank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnRank, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

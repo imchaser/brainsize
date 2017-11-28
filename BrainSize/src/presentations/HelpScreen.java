@@ -1,5 +1,8 @@
 package presentations;
 
+import java.awt.Dimension;
+import java.awt.Graphics;
+import javax.swing.ImageIcon;
 import services.OtherService;
 
 public class HelpScreen extends javax.swing.JFrame {
@@ -20,7 +23,15 @@ public class HelpScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnHelp = new javax.swing.JPanel();
+        pnHelp = new javax.swing.JPanel(){
+            ImageIcon icon = new ImageIcon("images/background.jpg");
+            public void paintComponent(Graphics g){
+                Dimension d = getSize();
+                g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
+                setOpaque(false);
+                super.paintComponent(g);
+            }
+        };
         jScrollPane1 = new javax.swing.JScrollPane();
         taHelp = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();

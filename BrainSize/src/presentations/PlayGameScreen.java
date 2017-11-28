@@ -56,8 +56,6 @@ public class PlayGameScreen extends javax.swing.JFrame {
         };
         lblCountTime = new javax.swing.JLabel();
         lblScore = new javax.swing.JLabel();
-        btnBattieng = new javax.swing.JButton();
-        btnTattieng = new javax.swing.JButton();
         btnB = new javax.swing.JButton();
         btnC = new javax.swing.JButton();
         btnD = new javax.swing.JButton();
@@ -95,12 +93,6 @@ public class PlayGameScreen extends javax.swing.JFrame {
         lblScore.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblScore.setForeground(new java.awt.Color(255, 255, 255));
         lblScore.setText("Điểm");
-
-        btnBattieng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/on.png"))); // NOI18N
-        btnBattieng.setPreferredSize(new java.awt.Dimension(30, 30));
-
-        btnTattieng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/off.png"))); // NOI18N
-        btnTattieng.setPreferredSize(new java.awt.Dimension(30, 30));
 
         btnB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,6 +160,14 @@ public class PlayGameScreen extends javax.swing.JFrame {
         pnPlayGameLayout.setHorizontalGroup(
             pnPlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnPlayGameLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(lblCountTime, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73)
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(112, 112, 112)
+                .addComponent(lblScore)
+                .addGap(52, 52, 52))
+            .addGroup(pnPlayGameLayout.createSequentialGroup()
                 .addGroup(pnPlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnPlayGameLayout.createSequentialGroup()
                         .addGap(419, 419, 419)
@@ -189,40 +189,21 @@ public class PlayGameScreen extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addComponent(btnC, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(35, 35, 35)
-                        .addComponent(btnD, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnPlayGameLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(lblCountTime, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(73, 73, 73)
-                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(pnPlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnPlayGameLayout.createSequentialGroup()
-                                .addGap(123, 123, 123)
-                                .addComponent(btnBattieng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(6, 6, 6)
-                                .addComponent(btnTattieng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnPlayGameLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblScore)
-                                .addGap(22, 22, 22)))))
+                        .addComponent(btnD, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(30, 30, 30))
         );
         pnPlayGameLayout.setVerticalGroup(
             pnPlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnPlayGameLayout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addGroup(pnPlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBattieng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTattieng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(pnPlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnPlayGameLayout.createSequentialGroup()
-                        .addGap(94, 94, 94)
+                        .addGap(135, 135, 135)
                         .addComponent(lblCountTime))
                     .addGroup(pnPlayGameLayout.createSequentialGroup()
-                        .addGap(33, 33, 33)
+                        .addGap(74, 74, 74)
                         .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnPlayGameLayout.createSequentialGroup()
-                        .addGap(113, 113, 113)
+                        .addGap(154, 154, 154)
                         .addComponent(lblScore)))
                 .addGap(45, 45, 45)
                 .addGroup(pnPlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -346,11 +327,9 @@ public class PlayGameScreen extends javax.swing.JFrame {
     private javax.swing.JButton btn5050;
     private javax.swing.JButton btnA;
     private javax.swing.JButton btnB;
-    private javax.swing.JButton btnBattieng;
     private javax.swing.JButton btnC;
     private javax.swing.JButton btnD;
     private javax.swing.JButton btnDoiCH;
-    private javax.swing.JButton btnTattieng;
     private javax.swing.JButton jButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCountTime;
