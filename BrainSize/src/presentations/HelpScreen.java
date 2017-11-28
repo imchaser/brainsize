@@ -1,5 +1,6 @@
 package presentations;
 
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
@@ -50,11 +51,19 @@ public class HelpScreen extends javax.swing.JFrame {
         taHelp.setRows(5);
         jScrollPane1.setViewportView(taHelp);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 153, 51));
         jLabel1.setText("LUẬT CHƠI :");
 
         btnBackHelp.setText("Back");
+        btnBackHelp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBackHelpMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBackHelpMouseExited(evt);
+            }
+        });
         btnBackHelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackHelpActionPerformed(evt);
@@ -109,6 +118,14 @@ public class HelpScreen extends javax.swing.JFrame {
         this.setVisible(false);
        
     }//GEN-LAST:event_btnBackHelpActionPerformed
+
+    private void btnBackHelpMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackHelpMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_btnBackHelpMouseEntered
+
+    private void btnBackHelpMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackHelpMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_btnBackHelpMouseExited
 
     /**
      * @param args the command line arguments

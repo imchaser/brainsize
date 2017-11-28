@@ -1,5 +1,6 @@
 package presentations;
 
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
@@ -74,6 +75,14 @@ public class RankScreen extends javax.swing.JFrame {
         lblTop5.setForeground(new java.awt.Color(255, 255, 255));
 
         btnBackRank.setText("Back");
+        btnBackRank.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBackRankMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBackRankMouseExited(evt);
+            }
+        });
         btnBackRank.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackRankActionPerformed(evt);
@@ -140,6 +149,14 @@ public class RankScreen extends javax.swing.JFrame {
         st.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnBackRankActionPerformed
+
+    private void btnBackRankMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackRankMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_btnBackRankMouseEntered
+
+    private void btnBackRankMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackRankMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_btnBackRankMouseExited
 
     /**
      * @param args the command line arguments

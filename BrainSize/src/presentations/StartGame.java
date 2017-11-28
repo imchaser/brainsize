@@ -1,5 +1,6 @@
 package presentations;
 
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
@@ -56,28 +57,64 @@ public class StartGame extends javax.swing.JFrame {
         pnStartGame.setMinimumSize(new java.awt.Dimension(600, 600));
         pnStartGame.setPreferredSize(new java.awt.Dimension(600, 600));
 
+        btnPlayGame.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnPlayGame.setText("CHƠI GAME");
+        btnPlayGame.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnPlayGameMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnPlayGameMouseExited(evt);
+            }
+        });
         btnPlayGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPlayGameActionPerformed(evt);
             }
         });
 
+        btnRank.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnRank.setText("BẢNG ĐIỂM");
+        btnRank.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnRankMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnRankMouseExited(evt);
+            }
+        });
         btnRank.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRankActionPerformed(evt);
             }
         });
 
+        btnHelp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnHelp.setText("HƯỚNG DẪN");
+        btnHelp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnHelpMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnHelpMouseExited(evt);
+            }
+        });
         btnHelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHelpActionPerformed(evt);
             }
         });
 
+        btnQuit.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnQuit.setText("THOÁT");
+        btnQuit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnQuitMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnQuitMouseExited(evt);
+            }
+        });
         btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnQuitActionPerformed(evt);
@@ -102,34 +139,33 @@ public class StartGame extends javax.swing.JFrame {
         pnStartGameLayout.setHorizontalGroup(
             pnStartGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnStartGameLayout.createSequentialGroup()
-                .addGap(209, 209, 209)
-                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pnStartGameLayout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addComponent(btnPlayGame, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pnStartGameLayout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addComponent(btnRank, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pnStartGameLayout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addComponent(btnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pnStartGameLayout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addComponent(btnQuit, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnStartGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnStartGameLayout.createSequentialGroup()
+                        .addGap(209, 209, 209)
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnStartGameLayout.createSequentialGroup()
+                        .addGap(189, 189, 189)
+                        .addGroup(pnStartGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnPlayGame, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnRank, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnQuit, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(211, 211, 211))
         );
         pnStartGameLayout.setVerticalGroup(
             pnStartGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnStartGameLayout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(btnPlayGame)
+                .addGap(43, 43, 43)
+                .addComponent(btnPlayGame, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
-                .addComponent(btnRank)
+                .addComponent(btnRank, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(btnHelp)
+                .addComponent(btnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
-                .addComponent(btnQuit))
+                .addComponent(btnQuit, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -173,6 +209,38 @@ public class StartGame extends javax.swing.JFrame {
     private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnQuitActionPerformed
+
+    private void btnPlayGameMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPlayGameMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_btnPlayGameMouseEntered
+
+    private void btnPlayGameMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPlayGameMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_btnPlayGameMouseExited
+
+    private void btnRankMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRankMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_btnRankMouseEntered
+
+    private void btnRankMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRankMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_btnRankMouseExited
+
+    private void btnHelpMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHelpMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_btnHelpMouseEntered
+
+    private void btnHelpMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHelpMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_btnHelpMouseExited
+
+    private void btnQuitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQuitMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_btnQuitMouseEntered
+
+    private void btnQuitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQuitMouseExited
+        setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_btnQuitMouseExited
 
     /**
      * @param args the command line arguments
