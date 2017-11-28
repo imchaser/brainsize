@@ -48,7 +48,6 @@ public class RankScreen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(600, 600));
         setMinimumSize(new java.awt.Dimension(600, 600));
-        setPreferredSize(new java.awt.Dimension(600, 600));
         setSize(new java.awt.Dimension(600, 600));
 
         pnRank.setMaximumSize(new java.awt.Dimension(600, 600));

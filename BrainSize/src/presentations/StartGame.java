@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 
 public class StartGame extends javax.swing.JFrame {
 
-   private PlayGameScreen pl ;
+    private PlayGameScreen pl;
 
     public PlayGameScreen getPl() {
         return pl;
@@ -58,7 +58,13 @@ public class StartGame extends javax.swing.JFrame {
         pnStartGame.setPreferredSize(new java.awt.Dimension(600, 600));
 
         btnPlayGame.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnPlayGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/play.png"))); // NOI18N
         btnPlayGame.setText("CHƠI GAME");
+        btnPlayGame.setAlignmentY(0.0F);
+        btnPlayGame.setFocusPainted(false);
+        btnPlayGame.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnPlayGame.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnPlayGame.setIconTextGap(20);
         btnPlayGame.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnPlayGameMouseEntered(evt);
@@ -74,7 +80,11 @@ public class StartGame extends javax.swing.JFrame {
         });
 
         btnRank.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnRank.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rank.png"))); // NOI18N
         btnRank.setText("BẢNG ĐIỂM");
+        btnRank.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnRank.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnRank.setIconTextGap(20);
         btnRank.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnRankMouseEntered(evt);
@@ -90,7 +100,10 @@ public class StartGame extends javax.swing.JFrame {
         });
 
         btnHelp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnHelp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/help.png"))); // NOI18N
         btnHelp.setText("HƯỚNG DẪN");
+        btnHelp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnHelp.setIconTextGap(15);
         btnHelp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnHelpMouseEntered(evt);
@@ -106,7 +119,10 @@ public class StartGame extends javax.swing.JFrame {
         });
 
         btnQuit.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnQuit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/quit.png"))); // NOI18N
         btnQuit.setText("THOÁT");
+        btnQuit.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnQuit.setIconTextGap(30);
         btnQuit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnQuitMouseEntered(evt);
@@ -150,22 +166,22 @@ public class StartGame extends javax.swing.JFrame {
                             .addComponent(btnRank, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnQuit, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(211, 211, 211))
+                .addGap(201, 201, 201))
         );
         pnStartGameLayout.setVerticalGroup(
             pnStartGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnStartGameLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(36, 36, 36)
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
-                .addComponent(btnPlayGame, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnPlayGame, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
-                .addComponent(btnRank, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRank, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(btnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
-                .addComponent(btnQuit, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(btnQuit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
