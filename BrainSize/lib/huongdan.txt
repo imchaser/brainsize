@@ -1,0 +1,10 @@
+﻿• Sau khi giao diện trò chơi được mở bạn sẽ thấy xuất hiện giao diện của trò chơi 
+• Bạn có thể click để chơi ngay hoặc xem bảng xếp hạng nếu đã từng chơi hoặc ấn thoát 
+ngay.
+• Trò chơi bao gồm 15 câu hỏi chia làm ba mốc 5, 10 và 15 kết thúc 15 câu hỏi bạn sẽ đạt 
+tối đa 15 điểm và được lưu tên lại.
+• Trong quá trình chơi game bạn có 2 sự chơi giúp đó là 50/50 bạn được phép loại bỏ đi 2 
+phương án sai, và có quyền next câu hỏi tuy nhiên việc next câu hỏi đồng nghĩa bạn sẽ bị 
+trừ đi 1 điểm .
+• Kết thúc trò chơi ban sẽ được lưu điểm và có thể ấn tiếp tục để chơi tiếp.
+• Chúc các bạn chơi game vui vẻ !

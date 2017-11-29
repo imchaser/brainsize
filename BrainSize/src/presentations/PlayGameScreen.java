@@ -42,7 +42,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
 
         jButton3 = new javax.swing.JButton();
         pnPlayGame = new javax.swing.JPanel(){
-            ImageIcon icon = new ImageIcon("images/background.jpg");
+            ImageIcon icon = new ImageIcon("src/library/images/background.jpg");
             public void paintComponent(Graphics g){
                 Dimension d = getSize();
                 g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
@@ -62,7 +62,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         taCauHoi = new javax.swing.JTextArea();
         logo = new javax.swing.JPanel(){
-            ImageIcon icon = new ImageIcon("images/logo.png");
+            ImageIcon icon = new ImageIcon("src/library/images/logo.png");
             public void paintComponent(Graphics g){
                 Dimension d = getSize();
                 g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
@@ -146,7 +146,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
             }
         });
 
-        btnDoiCH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Switch.png"))); // NOI18N
+        btnDoiCH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library/icons/Switch.png"))); // NOI18N
         btnDoiCH.setFocusPainted(false);
         btnDoiCH.setMaximumSize(new java.awt.Dimension(50, 30));
         btnDoiCH.setMinimumSize(new java.awt.Dimension(50, 30));
@@ -165,7 +165,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
             }
         });
 
-        btn5050.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/5050.png"))); // NOI18N
+        btn5050.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library/icons/5050.png"))); // NOI18N
         btn5050.setFocusPainted(false);
         btn5050.setMaximumSize(new java.awt.Dimension(50, 30));
         btn5050.setMinimumSize(new java.awt.Dimension(50, 30));

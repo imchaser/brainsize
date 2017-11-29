@@ -12,7 +12,7 @@ public class HelpScreen extends javax.swing.JFrame {
     public HelpScreen() {
         initComponents();
         
-        taHelp.setText(otherService.helpText("huongdan.txt"));
+        taHelp.setText(otherService.helpText("lib/huongdan.txt"));
         taHelp.setEditable(false);
         
         setSize(600, 600);

@@ -26,7 +26,7 @@ public class StartGame extends javax.swing.JFrame {
     private void initComponents() {
 
         pnStartGame = new javax.swing.JPanel(){
-            ImageIcon icon = new ImageIcon("images/gg.jpg");
+            ImageIcon icon = new ImageIcon("src/library/images/background.jpg");
             public void paintComponent(Graphics g){
                 Dimension d = getSize();
                 g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
@@ -39,7 +39,7 @@ public class StartGame extends javax.swing.JFrame {
         btnHelp = new javax.swing.JButton();
         btnQuit = new javax.swing.JButton();
         logo = new javax.swing.JPanel(){
-            ImageIcon icon = new ImageIcon("images/logo.png");
+            ImageIcon icon = new ImageIcon("src/library/images/logo.png");
             public void paintComponent(Graphics g){
                 Dimension d = getSize();
                 g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
@@ -57,7 +57,7 @@ public class StartGame extends javax.swing.JFrame {
         pnStartGame.setPreferredSize(new java.awt.Dimension(600, 600));
 
         btnPlayGame.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnPlayGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/play.png"))); // NOI18N
+        btnPlayGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library/icons/play.png"))); // NOI18N
         btnPlayGame.setText("CHƠI GAME");
         btnPlayGame.setAlignmentY(0.0F);
         btnPlayGame.setFocusPainted(false);
@@ -79,7 +79,7 @@ public class StartGame extends javax.swing.JFrame {
         });
 
         btnRank.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnRank.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/rank.png"))); // NOI18N
+        btnRank.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library/icons/rank.png"))); // NOI18N
         btnRank.setText("BẢNG ĐIỂM");
         btnRank.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnRank.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -99,7 +99,7 @@ public class StartGame extends javax.swing.JFrame {
         });
 
         btnHelp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnHelp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/help.png"))); // NOI18N
+        btnHelp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library/icons/help.png"))); // NOI18N
         btnHelp.setText("HƯỚNG DẪN");
         btnHelp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnHelp.setIconTextGap(15);
@@ -118,7 +118,7 @@ public class StartGame extends javax.swing.JFrame {
         });
 
         btnQuit.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnQuit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/quit.png"))); // NOI18N
+        btnQuit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library/icons/quit.png"))); // NOI18N
         btnQuit.setText("THOÁT");
         btnQuit.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnQuit.setIconTextGap(30);
