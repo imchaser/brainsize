@@ -26,7 +26,7 @@ public class StartGame extends javax.swing.JFrame {
     private void initComponents() {
 
         pnStartGame = new javax.swing.JPanel(){
-            ImageIcon icon = new ImageIcon("images/background.jpg");
+            ImageIcon icon = new ImageIcon("images/gg.jpg");
             public void paintComponent(Graphics g){
                 Dimension d = getSize();
                 g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
@@ -49,7 +49,6 @@ public class StartGame extends javax.swing.JFrame {
         };
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(600, 600));
         setMinimumSize(new java.awt.Dimension(600, 600));
         setSize(new java.awt.Dimension(600, 600));
 

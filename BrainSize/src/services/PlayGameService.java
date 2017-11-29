@@ -13,6 +13,7 @@ public class PlayGameService {
     private CauHoiDAO ch = new CauHoiDAO();
     private ArrayList<CauHoi> listCH = null;
     private BangDiemDAO bd = new BangDiemDAO();
+    private int i = 0;
 
     //lấy ra ngẫu nhiên id câu hỏi
     public int getIDCH(int stt, Vector listID) {
@@ -29,11 +30,16 @@ public class PlayGameService {
         min = listCH.get(0).getIDCH();
         if (!listID.contains(id)) {
             do {
-                id = rd.ints(min, listCH.get(listCH.size()-1).getIDCH() + 1).limit(1).findFirst().getAsInt();
+                id = rd.ints(min, listCH.get(listCH.size() - 1).getIDCH() + 1).limit(1).findFirst().getAsInt();
             } while (listID.contains(id));
             listID.add(id);
         }
         return id;
+    }
+
+    //lấy nội dung câu hỏi
+    public String getNDCH(int idCH) {
+        return ch.getCH(idCH).getCauHoi();
     }
 
     //lấy ra đáp án A,B,C,D để hiển thị theo câu hỏi có id tương ứng
@@ -73,30 +79,53 @@ public class PlayGameService {
         }
         return display;
     }
-   //trợ giúp 5050
-    public  void sp5050(){
-        
+    //trợ giúp 5050
+
+    public String sp5050(int idCH, String dapAn) {
+        String da = ch.getCH(idCH).getKetQua();
+        if (!dapAn.equals(da) && i < 2) {
+            dapAn = "";
+            i++;
+        }
+        return dapAn;
     }
 //tinh điểm
-    public int score(int stt, boolean nn, boolean dch){
-        int diem=0;
-        int x = stt-1;
-        if(x<=5){
-            diem=x*5;
-        }else if(x>5 && x<=10){
-            diem=(x-5)*10+25;
-        }else{
-            diem=(x-10)*15+75;
+
+    public int score(int stt, boolean nn, boolean dch) {
+        int diem = 0;
+        int x = stt - 1;
+        if (x <= 5) {
+            diem = x * 5;
+        } else if (x > 5 && x <= 10) {
+            diem = (x - 5) * 10 + 25;
+        } else {
+            diem = (x - 10) * 15 + 75;
         }
-        if(nn){
+        if (nn) {
             diem = diem - 10;
         }
-        if(dch){
+        if (dch) {
             diem = diem - 5;
         }
         return diem;
     }
-    public void saveScore(String name,int score){
-        bd.saveScore(new BangDiem( name, score));
+
+    //lưu tên người chơi và số điểm
+    public void saveScore(String name, int score) {
+        bd.saveScore(new BangDiem(name, score));
+    }
+    //lấy số để ramdom đáp án theo thứ tự ngẫu nhiên
+    public Vector randomDA() {
+        int da = 0;
+        Vector listDA = new Vector();
+        Random rd = new Random();
+        for (int i = 1; i <= 4;) {
+            da = rd.ints(1, 5).limit(1).findFirst().getAsInt();
+            if (!listDA.contains(da)) {
+                listDA.add(da);
+                i++;
+            }
+        }
+        return listDA;
     }
 }

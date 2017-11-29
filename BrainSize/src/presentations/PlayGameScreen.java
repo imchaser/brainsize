@@ -6,7 +6,6 @@ import DAOs.CauHoiDAO;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.util.Random;
 import java.util.Vector;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -22,12 +21,8 @@ public class PlayGameScreen extends javax.swing.JFrame {
     private int stt = 1; //số thứ tự của câu hỏi
     private Vector listIDCH = new Vector(); //danh sách ID câu hỏi
     private int idCH = 0; //id câu hỏi
-    CauHoiDAO ch = new CauHoiDAO();
-    private Vector v = new Vector();
-    private int id = 0;
     private int time = 60; //thời gian đếm ngược (giây)
     private Timer t = new Timer(1000, countTime());
-    
     private boolean nn = false;
     private boolean dch = false;
 
@@ -151,8 +146,11 @@ public class PlayGameScreen extends javax.swing.JFrame {
             }
         });
 
-        btnDoiCH.setText("Đổi");
-        btnDoiCH.setPreferredSize(new java.awt.Dimension(60, 23));
+        btnDoiCH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Switch.png"))); // NOI18N
+        btnDoiCH.setFocusPainted(false);
+        btnDoiCH.setMaximumSize(new java.awt.Dimension(50, 30));
+        btnDoiCH.setMinimumSize(new java.awt.Dimension(50, 30));
+        btnDoiCH.setPreferredSize(new java.awt.Dimension(50, 30));
         btnDoiCH.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnDoiCHMouseEntered(evt);
@@ -167,8 +165,11 @@ public class PlayGameScreen extends javax.swing.JFrame {
             }
         });
 
-        btn5050.setText("50:50");
-        btn5050.setPreferredSize(new java.awt.Dimension(60, 30));
+        btn5050.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/5050.png"))); // NOI18N
+        btn5050.setFocusPainted(false);
+        btn5050.setMaximumSize(new java.awt.Dimension(50, 30));
+        btn5050.setMinimumSize(new java.awt.Dimension(50, 30));
+        btn5050.setPreferredSize(new java.awt.Dimension(50, 30));
         btn5050.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn5050MouseEntered(evt);
@@ -223,9 +224,9 @@ public class PlayGameScreen extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addComponent(lblSTT, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(303, 303, 303)
-                        .addComponent(btn5050, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn5050, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(btnDoiCH, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnDoiCH, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnPlayGameLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -257,8 +258,8 @@ public class PlayGameScreen extends javax.swing.JFrame {
                         .addComponent(lblScore)))
                 .addGap(38, 38, 38)
                 .addGroup(pnPlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn5050, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDoiCH, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn5050, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDoiCH, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSTT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -270,8 +271,10 @@ public class PlayGameScreen extends javax.swing.JFrame {
                 .addGroup(pnPlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnC, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnD, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
+
+        btn5050.getAccessibleContext().setAccessibleName("5050");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -290,27 +293,13 @@ public class PlayGameScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn5050ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5050ActionPerformed
-        int i = 0;
-        String kq = ch.getCH(idCH).getKetQua();
-        if (!btnA.getText().equals(kq)) {
-            btnA.setText("");
-            i++;
-        }
-        if (!btnC.getText().equals(kq) && i < 2) {
-            btnC.setText("");
-            i++;
-        }
-        if (!btnB.getText().equals(kq) && i < 2) {
-            btnB.setText("");
-            i++;
-        }
-        if (!btnD.getText().equals(kq) && i < 2) {
-            btnD.setText("");
-            i++;
-        }
+        btnA.setText(gameservice.sp5050(idCH, btnA.getText()));
+        btnD.setText(gameservice.sp5050(idCH, btnD.getText()));
+        btnB.setText(gameservice.sp5050(idCH, btnB.getText()));
+        btnC.setText(gameservice.sp5050(idCH, btnC.getText()));
         btn5050.setEnabled(false);
         nn = true;
-        lblScore.setText(gameservice.score(stt, nn, dch)+" Điểm");
+        lblScore.setText(gameservice.score(stt, nn, dch) + " Điểm");
     }//GEN-LAST:event_btn5050ActionPerformed
 
     private void btnDoiCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoiCHActionPerformed
@@ -318,7 +307,7 @@ public class PlayGameScreen extends javax.swing.JFrame {
         setText(idCH);
         btnDoiCH.setEnabled(false);
         dch = true;
-        lblScore.setText(gameservice.score(stt, nn, dch)+" Điểm");
+        lblScore.setText(gameservice.score(stt, nn, dch) + " Điểm");
     }//GEN-LAST:event_btnDoiCHActionPerformed
 
     private void btnAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAActionPerformed
@@ -438,19 +427,10 @@ public class PlayGameScreen extends javax.swing.JFrame {
     private javax.swing.JTextArea taCauHoi;
     // End of variables declaration//GEN-END:variables
     private void setText(int id) {
-        int da = 0;
-        Vector listDA = new Vector();
-        Random rd = new Random();
-        for (int i = 1; i <= 4;) {
-            da = rd.ints(1, 5).limit(1).findFirst().getAsInt();
-            if (!listDA.contains(da)) {
-                listDA.add(da);
-                i++;
-            }
-        }
-        lblScore.setText(gameservice.score(stt, nn, dch)+" Điểm");
+        Vector listDA = gameservice.randomDA();
+        lblScore.setText(gameservice.score(stt, nn, dch) + " Điểm");
         lblSTT.setText("Câu hỏi " + stt + " :");
-        taCauHoi.setText(ch.getCH(id).getCauHoi());
+        taCauHoi.setText(gameservice.getNDCH(idCH));
         btnA.setText(gameservice.getDA(id, (int) listDA.get(0)));
         btnB.setText(gameservice.getDA(id, (int) listDA.get(1)));
         btnC.setText(gameservice.getDA(id, (int) listDA.get(2)));
@@ -464,8 +444,8 @@ public class PlayGameScreen extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Bạn đã trả lời đúng!", "Chúc mừng!", 1);
             if (stt == 15) {
                 JOptionPane.showMessageDialog(null, "Bạn đã chiến thắng trò chơi!", "Chúc mừng!", 1);
-                String name = JOptionPane.showInputDialog(null, "Tên người chơi:", "Bạn ghi được " + gameservice.score(stt,nn,dch) + " điểm!", 1);
-                gameservice.saveScore(name, gameservice.score(stt,nn,dch));
+                String name = JOptionPane.showInputDialog(null, "Tên người chơi:", "Bạn ghi được " + gameservice.score(stt, nn, dch) + " điểm!", 1);
+                gameservice.saveScore(name, gameservice.score(stt, nn, dch));
                 RankScreen rank = new RankScreen();
                 rank.setVisible(true);
             } else {
@@ -476,8 +456,8 @@ public class PlayGameScreen extends javax.swing.JFrame {
             }
         } else {
             JOptionPane.showMessageDialog(null, "Rất tiếc, bạn đã trả lời sai!", "GG!", 2);
-            String name = JOptionPane.showInputDialog(null, "Tên người chơi:", "Bạn ghi được " + gameservice.score(stt,nn,dch) + " điểm!", 1);
-            gameservice.saveScore(name, gameservice.score(stt,nn,dch));
+            String name = JOptionPane.showInputDialog(null, "Tên người chơi:", "Bạn ghi được " + gameservice.score(stt, nn, dch) + " điểm!", 1);
+            gameservice.saveScore(name, gameservice.score(stt, nn, dch));
             RankScreen rank = new RankScreen();
             rank.setVisible(true);
             t.stop();
