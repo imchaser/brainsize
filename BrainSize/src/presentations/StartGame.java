@@ -9,10 +9,6 @@ public class StartGame extends javax.swing.JFrame {
 
     private PlayGameScreen pl;
 
-    public PlayGameScreen getPl() {
-        return pl;
-    }
-
     public StartGame() {
         initComponents();
         setSize(600, 600);
