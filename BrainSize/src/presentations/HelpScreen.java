@@ -25,7 +25,7 @@ public class HelpScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         pnHelp = new javax.swing.JPanel(){
-            ImageIcon icon = new ImageIcon("images/background.jpg");
+            ImageIcon icon = new ImageIcon("src/library/images/background.jpg");
             public void paintComponent(Graphics g){
                 Dimension d = getSize();
                 g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
