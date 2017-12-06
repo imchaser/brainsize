@@ -37,6 +37,15 @@ public class HelpScreen extends javax.swing.JFrame {
         taHelp = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         btnBackHelp = new javax.swing.JButton();
+        logo = new javax.swing.JPanel(){
+            ImageIcon icon = new ImageIcon("src/library/images/logo.png");
+            public void paintComponent(Graphics g){
+                Dimension d = getSize();
+                g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
+                setOpaque(false);
+                super.paintComponent(g);
+            }
+        };
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(600, 600));
@@ -55,7 +64,7 @@ public class HelpScreen extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 153, 51));
         jLabel1.setText("LUẬT CHƠI :");
 
-        btnBackHelp.setText("Back");
+        btnBackHelp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library/icons/back.png"))); // NOI18N
         btnBackHelp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnBackHelpMouseEntered(evt);
@@ -70,31 +79,46 @@ public class HelpScreen extends javax.swing.JFrame {
             }
         });
 
+        logo.setPreferredSize(new java.awt.Dimension(160, 180));
+
+        javax.swing.GroupLayout logoLayout = new javax.swing.GroupLayout(logo);
+        logo.setLayout(logoLayout);
+        logoLayout.setHorizontalGroup(
+            logoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 160, Short.MAX_VALUE)
+        );
+        logoLayout.setVerticalGroup(
+            logoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 180, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout pnHelpLayout = new javax.swing.GroupLayout(pnHelp);
         pnHelp.setLayout(pnHelpLayout);
         pnHelpLayout.setHorizontalGroup(
             pnHelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnHelpLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
                 .addGroup(pnHelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnHelpLayout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addGroup(pnHelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(btnBackHelp)))
-                    .addGroup(pnHelpLayout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel1)
+                        .addGap(29, 29, 29)
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnBackHelp)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         pnHelpLayout.setVerticalGroup(
             pnHelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnHelpLayout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(jLabel1)
-                .addGap(43, 43, 43)
+                .addContainerGap()
+                .addGroup(pnHelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(btnBackHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnBackHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -116,16 +140,16 @@ public class HelpScreen extends javax.swing.JFrame {
         StartGame st = new StartGame();
         st.setVisible(true);
         this.setVisible(false);
-       
-    }//GEN-LAST:event_btnBackHelpActionPerformed
 
-    private void btnBackHelpMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackHelpMouseEntered
-        setCursor(new Cursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_btnBackHelpMouseEntered
+    }//GEN-LAST:event_btnBackHelpActionPerformed
 
     private void btnBackHelpMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackHelpMouseExited
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_btnBackHelpMouseExited
+
+    private void btnBackHelpMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackHelpMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_btnBackHelpMouseEntered
 
     /**
      * @param args the command line arguments
@@ -166,6 +190,7 @@ public class HelpScreen extends javax.swing.JFrame {
     private javax.swing.JButton btnBackHelp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel logo;
     private javax.swing.JPanel pnHelp;
     private javax.swing.JTextArea taHelp;
     // End of variables declaration//GEN-END:variables

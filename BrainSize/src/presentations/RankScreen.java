@@ -44,36 +44,46 @@ public class RankScreen extends javax.swing.JFrame {
         lblTop4 = new javax.swing.JLabel();
         lblTop5 = new javax.swing.JLabel();
         btnBackRank = new javax.swing.JButton();
+        logo = new javax.swing.JPanel(){
+            ImageIcon icon = new ImageIcon("src/library/images/logo.png");
+            public void paintComponent(Graphics g){
+                Dimension d = getSize();
+                g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
+                setOpaque(false);
+                super.paintComponent(g);
+            }
+        };
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(600, 600));
         setMinimumSize(new java.awt.Dimension(600, 600));
         setSize(new java.awt.Dimension(600, 600));
 
+        pnRank.setForeground(new java.awt.Color(204, 204, 0));
         pnRank.setMaximumSize(new java.awt.Dimension(600, 600));
         pnRank.setMinimumSize(new java.awt.Dimension(600, 600));
 
-        lblRank.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblRank.setForeground(new java.awt.Color(255, 153, 51));
+        lblRank.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        lblRank.setForeground(new java.awt.Color(51, 255, 0));
         lblRank.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblRank.setText("BẢNG ĐIỂM");
 
-        lblTop1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lblTop1.setForeground(new java.awt.Color(255, 255, 255));
+        lblTop1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        lblTop1.setForeground(new java.awt.Color(255, 255, 0));
 
-        lblTop2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lblTop2.setForeground(new java.awt.Color(255, 255, 255));
+        lblTop2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        lblTop2.setForeground(new java.awt.Color(255, 255, 0));
 
-        lblTop3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lblTop3.setForeground(new java.awt.Color(255, 255, 255));
+        lblTop3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        lblTop3.setForeground(new java.awt.Color(255, 255, 0));
 
-        lblTop4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lblTop4.setForeground(new java.awt.Color(255, 255, 255));
+        lblTop4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        lblTop4.setForeground(new java.awt.Color(255, 255, 0));
 
-        lblTop5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lblTop5.setForeground(new java.awt.Color(255, 255, 255));
+        lblTop5.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        lblTop5.setForeground(new java.awt.Color(255, 255, 0));
 
-        btnBackRank.setText("Back");
+        btnBackRank.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library/icons/back.png"))); // NOI18N
         btnBackRank.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnBackRankMouseEntered(evt);
@@ -88,44 +98,66 @@ public class RankScreen extends javax.swing.JFrame {
             }
         });
 
+        logo.setPreferredSize(new java.awt.Dimension(160, 180));
+
+        javax.swing.GroupLayout logoLayout = new javax.swing.GroupLayout(logo);
+        logo.setLayout(logoLayout);
+        logoLayout.setHorizontalGroup(
+            logoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 160, Short.MAX_VALUE)
+        );
+        logoLayout.setVerticalGroup(
+            logoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 180, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout pnRankLayout = new javax.swing.GroupLayout(pnRank);
         pnRank.setLayout(pnRankLayout);
         pnRankLayout.setHorizontalGroup(
             pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblRank, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnRankLayout.createSequentialGroup()
-                .addGroup(pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(26, 26, 26)
+                .addGroup(pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnRankLayout.createSequentialGroup()
-                        .addGap(190, 190, 190)
-                        .addComponent(btnBackRank))
+                        .addComponent(btnBackRank)
+                        .addGap(109, 109, 109))
                     .addGroup(pnRankLayout.createSequentialGroup()
-                        .addGap(200, 200, 200)
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTop1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTop2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTop3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTop4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTop5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(200, Short.MAX_VALUE))
+                            .addGroup(pnRankLayout.createSequentialGroup()
+                                .addGap(49, 49, 49)
+                                .addGroup(pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblTop1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblTop2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblTop3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblTop4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblTop5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(pnRankLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblRank, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         pnRankLayout.setVerticalGroup(
             pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnRankLayout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(lblRank)
-                .addGap(41, 41, 41)
-                .addComponent(lblTop1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(lblTop2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(lblTop3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(lblTop4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(lblTop5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
+                .addGap(20, 20, 20)
+                .addGroup(pnRankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnRankLayout.createSequentialGroup()
+                        .addComponent(lblRank)
+                        .addGap(49, 49, 49)
+                        .addComponent(lblTop1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addComponent(lblTop2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(lblTop3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(lblTop4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(lblTop5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
                 .addComponent(btnBackRank, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -149,13 +181,13 @@ public class RankScreen extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnBackRankActionPerformed
 
-    private void btnBackRankMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackRankMouseEntered
-        setCursor(new Cursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_btnBackRankMouseEntered
-
     private void btnBackRankMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackRankMouseExited
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_btnBackRankMouseExited
+
+    private void btnBackRankMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackRankMouseEntered
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_btnBackRankMouseEntered
 
     /**
      * @param args the command line arguments
@@ -201,6 +233,7 @@ public class RankScreen extends javax.swing.JFrame {
     private javax.swing.JLabel lblTop3;
     private javax.swing.JLabel lblTop4;
     private javax.swing.JLabel lblTop5;
+    private javax.swing.JPanel logo;
     private javax.swing.JPanel pnRank;
     // End of variables declaration//GEN-END:variables
 }

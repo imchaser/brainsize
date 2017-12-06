@@ -112,15 +112,20 @@ public class PlayGameService {
 
     //lưu tên người chơi và số điểm
     public void saveScore(String name, int score) {
-        bd.saveScore(new BangDiem(name, score));
+        if (name == null) {
+            bd.saveScore(new BangDiem("Player", score));
+        } else {
+            bd.saveScore(new BangDiem(name, score));
+        }
     }
+
     //lấy số để ramdom đáp án theo thứ tự ngẫu nhiên
     public Vector randomDA() {
         int da = 0;
         Vector listDA = new Vector();
         Random rd = new Random();
         for (int i = 1; i <= 4;) {
-            da = rd.ints(1,5).limit(1).findFirst().getAsInt();
+            da = rd.ints(1, 5).limit(1).findFirst().getAsInt();
             if (!listDA.contains(da)) {
                 listDA.add(da);
                 i++;
