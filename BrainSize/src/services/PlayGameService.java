@@ -37,7 +37,7 @@ public class PlayGameService {
         return id;
     }
 
-    //lấy nội dung câu hỏi
+    //lấy nội dung câu hỏi theo id
     public String getNDCH(int idCH) {
         return ch.getCH(idCH).getCauHoi();
     }
@@ -120,7 +120,7 @@ public class PlayGameService {
         Vector listDA = new Vector();
         Random rd = new Random();
         for (int i = 1; i <= 4;) {
-            da = rd.ints(1, 5).limit(1).findFirst().getAsInt();
+            da = rd.ints(1,5).limit(1).findFirst().getAsInt();
             if (!listDA.contains(da)) {
                 listDA.add(da);
                 i++;
