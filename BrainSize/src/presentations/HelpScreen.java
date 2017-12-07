@@ -33,10 +33,6 @@ public class HelpScreen extends javax.swing.JFrame {
                 super.paintComponent(g);
             }
         };
-        jScrollPane1 = new javax.swing.JScrollPane();
-        taHelp = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
-        btnBackHelp = new javax.swing.JButton();
         logo = new javax.swing.JPanel(){
             ImageIcon icon = new ImageIcon("src/library/images/logo.png");
             public void paintComponent(Graphics g){
@@ -46,6 +42,10 @@ public class HelpScreen extends javax.swing.JFrame {
                 super.paintComponent(g);
             }
         };
+        jScrollPane1 = new javax.swing.JScrollPane();
+        taHelp = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+        btnBackHelp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(600, 600));
@@ -56,7 +56,21 @@ public class HelpScreen extends javax.swing.JFrame {
         pnHelp.setMinimumSize(new java.awt.Dimension(600, 600));
         pnHelp.setPreferredSize(new java.awt.Dimension(600, 600));
 
+        logo.setPreferredSize(new java.awt.Dimension(160, 180));
+
+        javax.swing.GroupLayout logoLayout = new javax.swing.GroupLayout(logo);
+        logo.setLayout(logoLayout);
+        logoLayout.setHorizontalGroup(
+            logoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 150, Short.MAX_VALUE)
+        );
+        logoLayout.setVerticalGroup(
+            logoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 162, Short.MAX_VALUE)
+        );
+
         taHelp.setColumns(20);
+        taHelp.setFont(new java.awt.Font("Monospaced", 0, 15)); // NOI18N
         taHelp.setRows(5);
         jScrollPane1.setViewportView(taHelp);
 
@@ -79,32 +93,23 @@ public class HelpScreen extends javax.swing.JFrame {
             }
         });
 
-        logo.setPreferredSize(new java.awt.Dimension(160, 180));
-
-        javax.swing.GroupLayout logoLayout = new javax.swing.GroupLayout(logo);
-        logo.setLayout(logoLayout);
-        logoLayout.setHorizontalGroup(
-            logoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
-        );
-        logoLayout.setVerticalGroup(
-            logoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout pnHelpLayout = new javax.swing.GroupLayout(pnHelp);
         pnHelp.setLayout(pnHelpLayout);
         pnHelpLayout.setHorizontalGroup(
             pnHelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnHelpLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
                 .addGroup(pnHelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnHelpLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(29, 29, 29)
-                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnBackHelp)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(37, 37, 37)
+                        .addGroup(pnHelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnHelpLayout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(31, 31, 31)
+                                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnBackHelp)))
+                    .addGroup(pnHelpLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         pnHelpLayout.setVerticalGroup(
@@ -112,11 +117,11 @@ public class HelpScreen extends javax.swing.JFrame {
             .addGroup(pnHelpLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnHelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnBackHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(58, Short.MAX_VALUE))
         );

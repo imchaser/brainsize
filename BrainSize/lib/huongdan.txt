@@ -1,10 +1,13 @@
-﻿• Sau khi giao diện trò chơi được mở bạn sẽ thấy xuất hiện giao diện của trò chơi 
-• Bạn có thể click để chơi ngay hoặc xem bảng xếp hạng nếu đã từng chơi hoặc ấn thoát 
-ngay.
-• Trò chơi bao gồm 15 câu hỏi chia làm ba mốc 5, 10 và 15 kết thúc 15 câu hỏi bạn sẽ đạt 
-tối đa 15 điểm và được lưu tên lại.
-• Trong quá trình chơi game bạn có 2 sự chơi giúp đó là 50/50 bạn được phép loại bỏ đi 2 
-phương án sai, và có quyền next câu hỏi tuy nhiên việc next câu hỏi đồng nghĩa bạn sẽ bị 
-trừ đi 1 điểm .
-• Kết thúc trò chơi ban sẽ được lưu điểm và có thể ấn tiếp tục để chơi tiếp.
-• Chúc các bạn chơi game vui vẻ !
+﻿• Đây là trò chơi trả lời câu hỏi trắc nghiệm tính điểm.
+• Có tổng cộng 15 câu hỏi cho mỗi lượt chơi được chia 
+làm 3 mức, mỗi mức có 5 câu hỏi.
+• Trả lời đúng một câu hỏi trong mức dễ bạn được 5 điểm,
+ mức trung bình 10 điểm, mức 
+khó 15 điểm. Thời gian cho mỗi câu hỏi là 60s.
+• Trong mỗi lượt chơi bạn có 2 sự trợ giúp là 50:50 và 
+đổi câu hỏi.
+• Nếu bạn sử dụng sự trợ giúp 50:50 sẽ bị trừ đi 10 điểm,
+ đổi câu hỏi bị trừ 5 điểm.
+• Trò chơi sẽ kết thúc khi bạn trả lời sai hoặc hết thời
+ gian hoặc bạn trả lời đúng 15 câu hỏi.
+• Chúc các bạn chơi game vui vẻ!
